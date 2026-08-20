@@ -1,0 +1,1484 @@
+/* ==========================================================================
+   ERYOPS ACADEMY - COMPONENT STYLES
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. HERO 3D TECH ECOSYSTEM VISUAL
+   -------------------------------------------------------------------------- */
+.hero-ecosystem-wrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1.05 / 1;
+  max-width: 520px;
+  margin: 0 auto;
+  perspective: 1000px;
+}
+
+.ecosystem-stage {
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at center, rgba(17, 23, 38, 0.9) 0%, rgba(7, 9, 14, 0.95) 70%);
+  border: 1px solid rgba(0, 240, 255, 0.2);
+  border-radius: var(--radius-xl);
+  padding: 1.5rem;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8), 0 0 35px rgba(0, 240, 255, 0.15);
+}
+
+.ecosystem-grid-lines {
+  position: absolute;
+  inset: 0;
+  background-image: 
+    linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  background-size: 32px 32px;
+  pointer-events: none;
+}
+
+.ecosystem-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+  padding-bottom: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.ecosystem-title-group {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.ecosystem-title {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--accent-cyan);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-weight: 600;
+}
+
+.status-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  color: #34d399;
+  background: rgba(16, 185, 129, 0.12);
+  padding: 0.2rem 0.55rem;
+  border-radius: var(--radius-full);
+}
+
+.ecosystem-canvas-box {
+  position: relative;
+  width: 100%;
+  height: calc(100% - 48px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Floating Ecosystem Nodes */
+.eco-node {
+  position: absolute;
+  padding: 0.65rem 1rem;
+  border-radius: var(--radius-md);
+  background: rgba(22, 30, 50, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(12px);
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  cursor: pointer;
+  transition: all var(--transition-normal);
+  z-index: 2;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+}
+
+.eco-node:hover {
+  transform: scale(1.08) translateY(-4px);
+  border-color: var(--accent-cyan);
+  box-shadow: 0 0 25px rgba(0, 240, 255, 0.35);
+  z-index: 10;
+}
+
+.eco-node-icon {
+  width: 28px;
+  height: 28px;
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+.eco-node-label {
+  display: flex;
+  flex-direction: column;
+}
+
+.node-name {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #ffffff;
+  line-height: 1.2;
+}
+
+.node-role {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  color: var(--text-secondary);
+}
+
+/* Specific Node Coordinates */
+.node-react {
+  top: 10%;
+  left: 6%;
+  border-color: rgba(0, 240, 255, 0.4);
+}
+.node-react .eco-node-icon { background: rgba(0, 240, 255, 0.2); color: #00f0ff; }
+
+.node-node {
+  top: 10%;
+  right: 6%;
+  border-color: rgba(16, 185, 129, 0.4);
+}
+.node-node .eco-node-icon { background: rgba(16, 185, 129, 0.2); color: #34d399; }
+
+.node-center-ai {
+  top: 44%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: linear-gradient(135deg, rgba(30, 20, 60, 0.95), rgba(15, 25, 45, 0.95));
+  border: 1.5px solid var(--accent-violet);
+  padding: 0.85rem 1.25rem;
+  box-shadow: 0 0 30px rgba(139, 92, 246, 0.35);
+  animation: floatPulse 4s ease-in-out infinite;
+}
+.node-center-ai:hover {
+  transform: translate(-50%, -54%) scale(1.06);
+}
+.node-center-ai .eco-node-icon { background: rgba(139, 92, 246, 0.3); color: #c084fc; width: 34px; height: 34px; }
+.node-center-ai .node-name { font-size: 0.95rem; color: #f8fafc; }
+
+@keyframes floatPulse {
+  0%, 100% { transform: translate(-50%, -50%); }
+  50% { transform: translate(-50%, -56%); }
+}
+
+.node-db {
+  bottom: 12%;
+  left: 6%;
+  border-color: rgba(245, 158, 11, 0.4);
+}
+.node-db .eco-node-icon { background: rgba(245, 158, 11, 0.2); color: #fbbf24; }
+
+.node-cloud {
+  bottom: 12%;
+  right: 6%;
+  border-color: rgba(99, 102, 241, 0.4);
+}
+.node-cloud .eco-node-icon { background: rgba(99, 102, 241, 0.2); color: #818cf8; }
+
+/* SVG Circuit Connector Overlay */
+.ecosystem-svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.circuit-line {
+  stroke: rgba(0, 240, 255, 0.25);
+  stroke-width: 1.5;
+  stroke-dasharray: 6 4;
+  animation: dashMove 20s linear infinite;
+}
+
+.circuit-line-violet {
+  stroke: rgba(139, 92, 246, 0.3);
+  stroke-width: 1.5;
+  stroke-dasharray: 6 4;
+  animation: dashMove 24s linear infinite reverse;
+}
+
+@keyframes dashMove {
+  to { stroke-dashoffset: 100; }
+}
+
+.packet-circle {
+  fill: var(--accent-cyan);
+  filter: drop-shadow(0 0 6px var(--accent-cyan));
+}
+
+
+/* --------------------------------------------------------------------------
+   2. SPECIAL OFFER & SCHEDULE SECTION
+   -------------------------------------------------------------------------- */
+.offer-section-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  align-items: stretch;
+}
+
+.offer-card {
+  background: linear-gradient(145deg, rgba(26, 36, 60, 0.7) 0%, rgba(12, 16, 26, 0.95) 100%);
+  border: 1.5px solid rgba(0, 240, 255, 0.3);
+  border-radius: var(--radius-xl);
+  padding: clamp(1.75rem, 3.5vw, 2.75rem);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6), 0 0 30px rgba(0, 240, 255, 0.1);
+}
+
+.offer-top-badge {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+}
+
+.offer-badge {
+  background: linear-gradient(90deg, #f59e0b, #ef4444);
+  color: #ffffff;
+  padding: 0.35rem 0.9rem;
+  border-radius: var(--radius-full);
+  font-family: var(--font-heading);
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  box-shadow: 0 4px 15px rgba(239, 68, 68, 0.35);
+}
+
+.batch-tag {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--accent-cyan);
+}
+
+.offer-heading {
+  font-size: clamp(1.6rem, 2.5vw, 2.1rem);
+  margin-bottom: 0.75rem;
+  color: #ffffff;
+}
+
+.offer-desc {
+  color: #94a3b8;
+  font-size: 1rem;
+  margin-bottom: 1.75rem;
+}
+
+.price-box {
+  background: rgba(10, 14, 24, 0.75);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem;
+  margin-bottom: 1.75rem;
+  display: flex;
+  align-items: baseline;
+  gap: 1.25rem;
+  flex-wrap: wrap;
+}
+
+.current-price {
+  font-family: var(--font-heading);
+  font-size: clamp(2.4rem, 4vw, 3.2rem);
+  font-weight: 800;
+  color: #ffffff;
+  line-height: 1;
+  text-shadow: 0 0 25px rgba(0, 240, 255, 0.3);
+}
+
+.original-price {
+  font-family: var(--font-heading);
+  font-size: 1.4rem;
+  color: #64748b;
+  text-decoration: line-through;
+  font-weight: 500;
+}
+
+.discount-pill {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  background: rgba(16, 185, 129, 0.15);
+  color: #34d399;
+  border: 1px solid rgba(16, 185, 129, 0.3);
+  padding: 0.3rem 0.7rem;
+  border-radius: var(--radius-full);
+  font-weight: 600;
+}
+
+.offer-perks {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  margin-bottom: 2rem;
+}
+
+.perk-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 0.95rem;
+  color: #e2e8f0;
+}
+
+.perk-item svg {
+  color: var(--accent-cyan);
+  flex-shrink: 0;
+  width: 18px;
+  height: 18px;
+}
+
+/* Schedule Card */
+.schedule-card {
+  background: var(--bg-glass-card);
+  border: 1px solid var(--border-glass);
+  border-radius: var(--radius-xl);
+  padding: clamp(1.75rem, 3.5vw, 2.75rem);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.schedule-header {
+  margin-bottom: 1.5rem;
+}
+
+.schedule-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.1rem;
+  margin-bottom: 1.75rem;
+}
+
+.schedule-cell {
+  background: rgba(10, 14, 24, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: var(--radius-md);
+  padding: 1rem;
+  transition: all var(--transition-normal);
+}
+
+.schedule-cell:hover {
+  background: rgba(17, 23, 38, 0.85);
+  border-color: rgba(0, 240, 255, 0.2);
+}
+
+.cell-label {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--accent-cyan);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.35rem;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.cell-val {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.cell-sub {
+  font-size: 0.825rem;
+  color: var(--text-secondary);
+  margin-top: 0.2rem;
+}
+
+
+/* --------------------------------------------------------------------------
+   3. INTERACTIVE TECHNOLOGY MATRIX ("What You Will Learn")
+   -------------------------------------------------------------------------- */
+.tech-filter-tabs {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-bottom: 2.5rem;
+}
+
+.filter-btn {
+  background: rgba(17, 23, 38, 0.65);
+  border: 1px solid var(--border-glass);
+  color: var(--text-secondary);
+  padding: 0.6rem 1.25rem;
+  border-radius: var(--radius-full);
+  font-family: var(--font-heading);
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.filter-btn:hover {
+  color: #ffffff;
+  border-color: rgba(0, 240, 255, 0.3);
+}
+
+.filter-btn.active {
+  background: var(--accent-cyan-dim);
+  border-color: var(--accent-cyan);
+  color: var(--accent-cyan);
+  box-shadow: 0 0 20px rgba(0, 240, 255, 0.2);
+}
+
+.tech-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1.25rem;
+}
+
+.tech-card {
+  background: var(--bg-glass-card);
+  border: 1px solid var(--border-glass);
+  border-radius: var(--radius-md);
+  padding: 1.25rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  transition: all var(--transition-normal);
+}
+
+.tech-card:hover {
+  background: var(--bg-glass-card-hover);
+  border-color: rgba(0, 240, 255, 0.3);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px -5px rgba(0, 240, 255, 0.15);
+}
+
+.tech-card-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-sm);
+  background: rgba(15, 23, 42, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  font-weight: 800;
+  font-size: 1.1rem;
+  color: var(--accent-cyan);
+}
+
+.tech-card-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.tech-card-title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.tech-card-cat {
+  font-family: var(--font-mono);
+  font-size: 0.725rem;
+  color: var(--text-muted);
+}
+
+
+/* --------------------------------------------------------------------------
+   4. 4-MONTH ANIMATED LEARNING ROADMAP
+   -------------------------------------------------------------------------- */
+.roadmap-container {
+  position: relative;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.roadmap-timeline-spine {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 36px;
+  width: 3px;
+  background: linear-gradient(180deg, var(--accent-cyan) 0%, var(--accent-violet) 50%, var(--accent-emerald) 100%);
+  border-radius: var(--radius-full);
+  box-shadow: 0 0 15px rgba(0, 240, 255, 0.4);
+}
+
+.roadmap-item {
+  position: relative;
+  padding-left: 90px;
+  margin-bottom: 3.5rem;
+}
+
+.roadmap-item:last-child {
+  margin-bottom: 0;
+}
+
+.roadmap-node-badge {
+  position: absolute;
+  top: 0;
+  left: 14px;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background: var(--bg-secondary);
+  border: 2px solid var(--accent-cyan);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-heading);
+  font-weight: 800;
+  font-size: 1.1rem;
+  color: #ffffff;
+  box-shadow: 0 0 20px rgba(0, 240, 255, 0.4);
+  z-index: 2;
+}
+
+.roadmap-item:nth-child(2) .roadmap-node-badge { border-color: var(--accent-indigo); box-shadow: 0 0 20px rgba(99, 102, 241, 0.4); }
+.roadmap-item:nth-child(3) .roadmap-node-badge { border-color: var(--accent-violet); box-shadow: 0 0 20px rgba(139, 92, 246, 0.4); }
+.roadmap-item:nth-child(4) .roadmap-node-badge { border-color: var(--accent-emerald); box-shadow: 0 0 20px rgba(16, 185, 129, 0.4); }
+
+.roadmap-card {
+  background: var(--bg-glass-card);
+  border: 1px solid var(--border-glass);
+  border-radius: var(--radius-lg);
+  padding: 2rem;
+  transition: all var(--transition-normal);
+}
+
+.roadmap-card:hover {
+  border-color: rgba(0, 240, 255, 0.3);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.roadmap-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 1.25rem;
+}
+
+.roadmap-month-title {
+  font-size: 1.4rem;
+  color: #ffffff;
+}
+
+.roadmap-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.roadmap-tag {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  padding: 0.25rem 0.65rem;
+  border-radius: var(--radius-sm);
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: #cbd5e1;
+}
+
+
+/* --------------------------------------------------------------------------
+   5. WHAT STUDENTS GET & LEARN BY BUILDING
+   -------------------------------------------------------------------------- */
+.benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.benefit-card {
+  background: var(--bg-glass-card);
+  border: 1px solid var(--border-glass);
+  border-radius: var(--radius-lg);
+  padding: 1.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  transition: all var(--transition-normal);
+}
+
+.benefit-card:hover {
+  border-color: rgba(0, 240, 255, 0.3);
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5);
+}
+
+.benefit-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-md);
+  background: var(--accent-cyan-dim);
+  border: 1px solid var(--accent-cyan-border);
+  color: var(--accent-cyan);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.benefit-title {
+  font-size: 1.2rem;
+  color: #ffffff;
+}
+
+.benefit-text {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+}
+
+.projects-categories-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.25rem;
+}
+
+.project-cat-card {
+  background: linear-gradient(180deg, rgba(20, 28, 48, 0.7) 0%, rgba(12, 16, 26, 0.85) 100%);
+  border: 1px solid var(--border-glass);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  transition: all var(--transition-normal);
+}
+
+.project-cat-card:hover {
+  border-color: rgba(139, 92, 246, 0.35);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(139, 92, 246, 0.15);
+}
+
+.cat-num {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--accent-violet);
+  font-weight: 700;
+}
+
+
+/* --------------------------------------------------------------------------
+   6. INSTRUCTOR PROFILE & ENGINEERING TIMELINE
+   -------------------------------------------------------------------------- */
+.instructor-showcase {
+  background: linear-gradient(145deg, rgba(20, 28, 48, 0.7) 0%, rgba(10, 14, 24, 0.95) 100%);
+  border: 1px solid rgba(0, 240, 255, 0.25);
+  border-radius: var(--radius-xl);
+  padding: clamp(2rem, 4vw, 3.5rem);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.7), 0 0 35px rgba(0, 240, 255, 0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+.instructor-grid {
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  gap: clamp(2rem, 4vw, 3.5rem);
+  align-items: center;
+}
+
+.instructor-visual-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.instructor-avatar-frame {
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, rgba(0, 240, 255, 0.2), rgba(139, 92, 246, 0.3));
+  border: 2px solid var(--accent-cyan);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  box-shadow: 0 0 35px rgba(0, 240, 255, 0.3);
+  margin-bottom: 1.5rem;
+  overflow: hidden;
+}
+
+.instructor-avatar-frame::before {
+  content: '';
+  position: absolute;
+  inset: -8px;
+  border-radius: 50%;
+  border: 1px dashed rgba(0, 240, 255, 0.4);
+  animation: rotateFrame 30s linear infinite;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.instructor-avatar-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  display: block;
+  position: relative;
+  z-index: 1;
+  transition: transform var(--transition-normal);
+}
+
+.instructor-avatar-frame:hover .instructor-avatar-img {
+  transform: scale(1.06);
+}
+
+@keyframes rotateFrame {
+  to { transform: rotate(360deg); }
+}
+
+.instructor-initials {
+  font-family: var(--font-heading);
+  font-size: 3.8rem;
+  font-weight: 900;
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.instructor-name {
+  font-size: 1.8rem;
+  color: #ffffff;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+}
+
+.instructor-title-tag {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  color: var(--accent-cyan);
+  margin-top: 0.25rem;
+  margin-bottom: 1rem;
+}
+
+.instructor-meta-tags {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  width: 100%;
+}
+
+.meta-contact-pill {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.45rem 1rem;
+  border-radius: var(--radius-full);
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--border-glass);
+  font-size: 0.85rem;
+  color: #cbd5e1;
+  text-decoration: none;
+  transition: all var(--transition-fast);
+}
+
+.meta-contact-pill:hover {
+  background: rgba(0, 240, 255, 0.1);
+  border-color: var(--accent-cyan);
+  color: #ffffff;
+}
+
+.instructor-bio {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: #cbd5e1;
+  margin-bottom: 1.5rem;
+}
+
+.experience-metric-strip {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  background: rgba(10, 14, 24, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: var(--radius-md);
+  padding: 1.25rem;
+  margin-bottom: 1.75rem;
+}
+
+.metric-item {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.metric-num {
+  font-family: var(--font-heading);
+  font-size: 1.75rem;
+  font-weight: 800;
+  color: var(--accent-cyan);
+}
+
+.metric-label {
+  font-family: var(--font-mono);
+  font-size: 0.725rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+}
+
+/* Engineering Journey Timeline */
+.journey-timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  position: relative;
+  padding-left: 2rem;
+  border-left: 2px dashed rgba(0, 240, 255, 0.25);
+  margin-top: 2rem;
+}
+
+.journey-step {
+  position: relative;
+}
+
+.journey-step::before {
+  content: '';
+  position: absolute;
+  left: calc(-2rem - 6px);
+  top: 6px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--accent-cyan);
+  box-shadow: 0 0 12px var(--accent-cyan);
+}
+
+.journey-step.present::before {
+  background: var(--accent-emerald);
+  box-shadow: 0 0 15px var(--accent-emerald);
+}
+
+.journey-year {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  color: var(--accent-cyan);
+  font-weight: 700;
+  margin-bottom: 0.25rem;
+}
+
+.journey-role {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.journey-company {
+  font-size: 0.95rem;
+  color: #94a3b8;
+  margin-bottom: 0.75rem;
+}
+
+.journey-desc {
+  font-size: 0.95rem;
+  color: #cbd5e1;
+  line-height: 1.6;
+}
+
+
+/* --------------------------------------------------------------------------
+   7. REAL-WORLD ENGINEERING PROJECTS ("Beyond Tutorials")
+   -------------------------------------------------------------------------- */
+.projects-showcase-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.project-deep-card {
+  background: linear-gradient(160deg, rgba(20, 28, 48, 0.75) 0%, rgba(12, 16, 26, 0.9) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--radius-xl);
+  padding: clamp(1.75rem, 3.5vw, 2.75rem);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6);
+  transition: all var(--transition-normal);
+}
+
+.project-deep-card:hover {
+  border-color: rgba(0, 240, 255, 0.3);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8), 0 0 30px rgba(0, 240, 255, 0.1);
+}
+
+.project-layout-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 2.5rem;
+  align-items: center;
+}
+
+.project-meta-row {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+
+.project-title {
+  font-size: clamp(1.5rem, 2.5vw, 2rem);
+  color: #ffffff;
+  margin-bottom: 1rem;
+}
+
+.project-desc-text {
+  font-size: 1rem;
+  line-height: 1.65;
+  color: #cbd5e1;
+  margin-bottom: 1.5rem;
+}
+
+.project-responsibilities {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+  margin-bottom: 1.75rem;
+}
+
+.resp-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.6rem;
+  font-size: 0.925rem;
+  color: #94a3b8;
+}
+
+.resp-item svg {
+  color: var(--accent-cyan);
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+  margin-top: 3px;
+}
+
+/* Interactive Simulators for Projects */
+.sim-container {
+  background: #080b12;
+  border: 1px solid rgba(0, 240, 255, 0.25);
+  border-radius: var(--radius-lg);
+  padding: 1.25rem;
+  position: relative;
+  overflow: hidden;
+  box-shadow: inset 0 0 25px rgba(0, 0, 0, 0.8);
+}
+
+.sim-header-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  padding-bottom: 0.65rem;
+  margin-bottom: 1rem;
+}
+
+.sim-label {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--accent-cyan);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.sim-canvas-view {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  background: #05070a;
+  border-radius: var(--radius-md);
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+#ai-bag-canvas {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.sim-stats-bar {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.75rem;
+  margin-top: 1rem;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+}
+
+.sim-stat-box {
+  background: rgba(255, 255, 255, 0.04);
+  padding: 0.5rem;
+  border-radius: var(--radius-sm);
+  text-align: center;
+}
+
+.sim-stat-val {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+/* IoT Interactive Flow Diagram */
+.iot-flow-box {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.iot-flow-nodes {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+}
+
+.iot-step-node {
+  background: rgba(20, 28, 48, 0.9);
+  border: 1px solid var(--border-glass);
+  border-radius: var(--radius-md);
+  padding: 0.85rem 0.75rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 0.35rem;
+  width: 22%;
+  z-index: 2;
+  transition: all var(--transition-fast);
+}
+
+.iot-step-node:hover {
+  border-color: var(--accent-cyan);
+  transform: translateY(-2px);
+}
+
+.iot-step-node svg {
+  color: var(--accent-cyan);
+}
+
+.iot-node-text {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.iot-connector-arrow {
+  color: var(--accent-cyan);
+  opacity: 0.5;
+}
+
+.iot-telemetry-live {
+  background: #06080e;
+  border-radius: var(--radius-md);
+  padding: 0.85rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  border: 1px dashed rgba(0, 240, 255, 0.3);
+}
+
+/* Enterprise POC Grid */
+.poc-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.poc-card {
+  background: var(--bg-glass-card);
+  border: 1px solid var(--border-glass);
+  border-radius: var(--radius-lg);
+  padding: 1.75rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: all var(--transition-normal);
+}
+
+.poc-card:hover {
+  border-color: rgba(139, 92, 246, 0.35);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+  transform: translateY(-3px);
+}
+
+/* Testing & Security Callout */
+.security-callout-card {
+  background: linear-gradient(135deg, rgba(26, 36, 60, 0.6) 0%, rgba(15, 23, 42, 0.9) 100%);
+  border: 1px solid rgba(16, 185, 129, 0.3);
+  border-radius: var(--radius-lg);
+  padding: 2rem;
+  display: flex;
+  align-items: flex-start;
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.security-badge-icon {
+  width: 52px;
+  height: 52px;
+  border-radius: var(--radius-md);
+  background: rgba(16, 185, 129, 0.15);
+  border: 1px solid rgba(16, 185, 129, 0.3);
+  color: #34d399;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+
+/* --------------------------------------------------------------------------
+   8. CAREER & PLACEMENT GUIDANCE & CERTIFICATE
+   -------------------------------------------------------------------------- */
+.career-pillars-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.25rem;
+  margin-bottom: 2.5rem;
+}
+
+.career-pillar-card {
+  background: var(--bg-glass-card);
+  border: 1px solid var(--border-glass);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.career-pillar-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-sm);
+  background: var(--accent-cyan-dim);
+  color: var(--accent-cyan);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.career-disclaimer-box {
+  background: rgba(15, 23, 42, 0.85);
+  border: 1px solid rgba(245, 158, 11, 0.3);
+  border-radius: var(--radius-md);
+  padding: 1.25rem 1.75rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  color: #cbd5e1;
+  font-size: 0.95rem;
+}
+
+.career-disclaimer-box svg {
+  color: #fbbf24;
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+}
+
+/* Certificate Preview Card */
+.certificate-showcase-box {
+  max-width: 780px;
+  margin: 0 auto;
+  background: linear-gradient(145deg, #162035 0%, #0d121e 100%);
+  border: 2px solid rgba(0, 240, 255, 0.3);
+  border-radius: var(--radius-xl);
+  padding: clamp(2rem, 5vw, 3.5rem);
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.8), 0 0 40px rgba(0, 240, 255, 0.15);
+  position: relative;
+  overflow: hidden;
+}
+
+.cert-border-inner {
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: var(--radius-lg);
+  padding: 2.5rem 2rem;
+  text-align: center;
+  position: relative;
+  background: radial-gradient(circle at center, rgba(17, 24, 39, 0.7) 0%, rgba(10, 14, 24, 0.95) 100%);
+}
+
+.cert-seal {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #00f0ff, #8b5cf6);
+  margin: 0 auto 1.25rem auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 25px rgba(0, 240, 255, 0.4);
+  color: #05070c;
+}
+
+.cert-sub {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--accent-cyan);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+}
+
+.cert-title {
+  font-size: clamp(1.8rem, 3vw, 2.4rem);
+  font-weight: 800;
+  margin-bottom: 1rem;
+  color: #ffffff;
+}
+
+.cert-recipient {
+  font-family: var(--font-mono);
+  font-size: 1.15rem;
+  color: #38bdf8;
+  border-bottom: 1px dashed rgba(56, 189, 248, 0.4);
+  display: inline-block;
+  padding: 0.25rem 2rem;
+  margin-bottom: 1.25rem;
+}
+
+.cert-footer-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+
+/* --------------------------------------------------------------------------
+   9. ABOUT BRAND & FAQ ACCORDION
+   -------------------------------------------------------------------------- */
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: center;
+}
+
+.about-features-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  margin-top: 1.5rem;
+}
+
+.about-feat-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.about-feat-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-sm);
+  background: var(--accent-cyan-dim);
+  color: var(--accent-cyan);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+/* FAQ Accordion */
+.faq-accordion {
+  max-width: 860px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.faq-item {
+  background: var(--bg-glass-card);
+  border: 1px solid var(--border-glass);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  transition: all var(--transition-normal);
+}
+
+.faq-item:hover {
+  border-color: rgba(0, 240, 255, 0.25);
+}
+
+.faq-item.active {
+  border-color: var(--accent-cyan);
+  background: var(--bg-glass-card-hover);
+}
+
+.faq-question-btn {
+  width: 100%;
+  padding: 1.35rem 1.75rem;
+  background: transparent;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  text-align: left;
+  cursor: pointer;
+  color: #ffffff;
+  font-family: var(--font-heading);
+  font-size: 1.075rem;
+  font-weight: 600;
+  gap: 1rem;
+}
+
+.faq-chevron {
+  width: 22px;
+  height: 22px;
+  color: var(--accent-cyan);
+  transition: transform var(--transition-normal);
+  flex-shrink: 0;
+}
+
+.faq-item.active .faq-chevron {
+  transform: rotate(180deg);
+}
+
+.faq-answer-panel {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.35s ease, padding 0.35s ease;
+  padding: 0 1.75rem;
+}
+
+.faq-item.active .faq-answer-panel {
+  padding: 0 1.75rem 1.5rem 1.75rem;
+  max-height: 300px;
+}
+
+.faq-answer-text {
+  color: #cbd5e1;
+  font-size: 0.975rem;
+  line-height: 1.65;
+}
+
+
+/* --------------------------------------------------------------------------
+   10. CONTACT & REGISTRATION CTA
+   -------------------------------------------------------------------------- */
+.cta-banner-box {
+  background: linear-gradient(135deg, rgba(22, 30, 50, 0.95) 0%, rgba(10, 14, 24, 0.98) 100%);
+  border: 1.5px solid rgba(0, 240, 255, 0.35);
+  border-radius: var(--radius-xl);
+  padding: clamp(2.5rem, 5vw, 4.5rem);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.8), 0 0 50px rgba(0, 240, 255, 0.2);
+}
+
+.cta-actions-group {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+  margin-top: 2rem;
+}
+
+.contact-direct-strip {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin-top: 2.5rem;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.contact-link-item {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  color: #cbd5e1;
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition: color var(--transition-fast);
+}
+
+.contact-link-item:hover {
+  color: var(--accent-cyan);
+}
+
+
+/* --------------------------------------------------------------------------
+   11. FOOTER
+   -------------------------------------------------------------------------- */
+.footer-main {
+  background: #04060a;
+  border-top: 1px solid var(--border-subtle);
+  padding: 4.5rem 0 2rem 0;
+  position: relative;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr 1.25fr;
+  gap: 2.5rem;
+  margin-bottom: 3.5rem;
+}
+
+.footer-col-title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 1.25rem;
+  letter-spacing: -0.01em;
+}
+
+.footer-links-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.footer-link {
+  color: #94a3b8;
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: color var(--transition-fast);
+}
+
+.footer-link:hover {
+  color: var(--accent-cyan);
+}
+
+.footer-bottom-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}

@@ -1,0 +1,781 @@
+/* ==========================================================================
+   ERYOPS ACADEMY - COMPREHENSIVE RESPONSIVE DESIGN SYSTEM
+   Optimized for Mobile (320px - 480px), Tablet (481px - 860px), Laptop & Desktop
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. LAPTOP & MEDIUM DESKTOP (max-width: 1080px)
+   -------------------------------------------------------------------------- */
+@media screen and (max-width: 1080px) {
+  .hero-grid {
+    grid-template-columns: 1fr;
+    gap: 3.5rem;
+    text-align: center;
+  }
+
+  .hero-content {
+    align-items: center;
+  }
+
+  .hero-actions,
+  .hero-badge-group,
+  .hero-trust-points {
+    justify-content: center;
+  }
+
+  .hero-key-info-bar {
+    width: 100%;
+    max-width: 650px;
+    margin: 0 auto;
+  }
+
+  .hero-ecosystem-wrapper {
+    max-width: 480px;
+  }
+
+  .offer-section-grid {
+    grid-template-columns: 1fr;
+    max-width: 680px;
+    margin: 0 auto;
+  }
+
+  .project-layout-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .instructor-grid {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .instructor-visual-box {
+    margin-bottom: 1.5rem;
+  }
+
+  .instructor-meta-tags {
+    max-width: 380px;
+    margin: 0 auto;
+  }
+
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 2.5rem;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   2. TABLET SCREENS (max-width: 860px)
+   -------------------------------------------------------------------------- */
+@media screen and (max-width: 860px) {
+  /* Navigation */
+  .nav-menu-wrapper,
+  .nav-actions {
+    display: none;
+  }
+
+  .mobile-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* Section Spacing */
+  .section {
+    padding: clamp(3.5rem, 7vw, 5rem) 0;
+  }
+
+  /* Filter Tabs - Smooth Horizontal Swipeable Chips on Tablet/Mobile */
+  .tech-filter-tabs {
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 0.75rem;
+    margin-bottom: 2rem;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+
+  .tech-filter-tabs::-webkit-scrollbar {
+    display: none;
+  }
+
+  .filter-btn {
+    white-space: nowrap;
+    flex-shrink: 0;
+    padding: 0.55rem 1.15rem;
+    font-size: 0.85rem;
+  }
+
+  /* Roadmap Adjustments */
+  .roadmap-item {
+    padding-left: 65px;
+  }
+
+  .roadmap-timeline-spine {
+    left: 22px;
+  }
+
+  .roadmap-node-badge {
+    left: 2px;
+    width: 40px;
+    height: 40px;
+    font-size: 0.9rem;
+  }
+
+  /* IoT Flow Diagram */
+  .iot-flow-nodes {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .iot-step-node {
+    width: 100%;
+    flex-direction: row;
+    justify-content: flex-start;
+    padding: 0.75rem 1rem;
+    gap: 0.85rem;
+  }
+
+  .iot-connector-arrow {
+    transform: rotate(90deg);
+    margin: -0.25rem 0;
+  }
+
+  .security-callout-card {
+    flex-direction: column;
+    gap: 1.25rem;
+    padding: 1.5rem;
+  }
+
+  /* Benefits & POC Grids */
+  .benefits-grid,
+  .poc-grid,
+  .career-pillars-grid {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  }
+
+  /* Hero Ecosystem Visual on Tablet */
+  .hero-ecosystem-wrapper {
+    max-width: 440px;
+    aspect-ratio: auto;
+    min-height: 420px;
+    height: 420px;
+    margin: 1.5rem auto 0 auto;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   3. MOBILE DEVICES (max-width: 580px)
+   -------------------------------------------------------------------------- */
+@media screen and (max-width: 580px) {
+  :root {
+    --container-padding: 1.15rem;
+    --header-height: 68px;
+  }
+
+  /* Prevent any unintentional horizontal drift */
+  body, html {
+    overflow-x: hidden;
+    width: 100%;
+  }
+
+  /* Hero Section Mobile */
+  .hero-section {
+    padding-top: calc(var(--header-height) + 1.75rem);
+    padding-bottom: 3.5rem;
+    min-height: auto;
+  }
+
+  .hero-title {
+    font-size: clamp(2rem, 8.5vw, 2.75rem);
+    line-height: 1.12;
+  }
+
+  .hero-subheadline {
+    font-size: 1.05rem;
+    line-height: 1.5;
+  }
+
+  .hero-key-info-bar {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+    padding: 0.9rem 1.1rem;
+    text-align: left;
+  }
+
+  .info-item {
+    gap: 0.75rem;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+    width: 100%;
+    gap: 0.75rem;
+  }
+
+  .hero-actions .btn {
+    width: 100%;
+    padding: 0.85rem 1.25rem;
+    font-size: 0.95rem;
+  }
+
+  .hero-trust-points {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.65rem;
+    font-size: 0.825rem;
+  }
+
+  /* Hero 3D Ecosystem Visual on Small Screens */
+  .hero-ecosystem-wrapper {
+    max-width: 100%;
+    aspect-ratio: auto;
+    min-height: 410px;
+    height: 410px;
+    margin: 1.5rem auto 0 auto;
+  }
+
+  .ecosystem-stage {
+    padding: 0.85rem;
+    border-radius: var(--radius-lg);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+
+  .ecosystem-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.5rem;
+    padding-bottom: 0.5rem;
+    margin-bottom: 0.5rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .ecosystem-title-group {
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+    min-width: 0;
+    flex: 1;
+  }
+
+  .ecosystem-title {
+    font-size: 0.68rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .status-pill {
+    font-size: 0.58rem;
+    padding: 0.15rem 0.4rem;
+    flex-shrink: 0;
+  }
+
+  .ecosystem-canvas-box {
+    position: relative;
+    width: 100%;
+    flex: 1;
+    min-height: 330px;
+  }
+
+  /* Specific mobile-tailored coordinates with clean spacing & no overlapping */
+  .eco-node {
+    padding: 0.38rem 0.55rem;
+    gap: 0.4rem;
+    border-radius: var(--radius-sm);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
+  }
+
+  .eco-node-icon {
+    width: 24px;
+    height: 24px;
+    font-size: 0.75rem;
+    flex-shrink: 0;
+    border-radius: 4px;
+  }
+
+  .eco-node-icon svg {
+    width: 14px;
+    height: 14px;
+  }
+
+  .eco-node-label {
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .node-name {
+    font-size: 0.72rem;
+    font-weight: 700;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    line-height: 1.15;
+  }
+
+  .node-role {
+    font-size: 0.58rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    line-height: 1.15;
+  }
+
+  /* Level 1: Top Row (React & Node.js) */
+  .node-react {
+    top: 4%;
+    left: 2%;
+    right: auto;
+    bottom: auto;
+    width: 47%;
+    max-width: 47%;
+  }
+
+  .node-node {
+    top: 4%;
+    right: 2%;
+    left: auto;
+    bottom: auto;
+    width: 47%;
+    max-width: 47%;
+  }
+
+  /* Level 2: Center (AI Engine) */
+  .node-center-ai {
+    top: 48%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 86%;
+    max-width: 250px;
+    padding: 0.55rem 0.8rem;
+    justify-content: center;
+  }
+
+  .node-center-ai:hover {
+    transform: translate(-50%, -52%);
+  }
+
+  .node-center-ai .eco-node-icon {
+    width: 28px;
+    height: 28px;
+  }
+
+  .node-center-ai .node-name {
+    font-size: 0.78rem;
+  }
+
+  .node-center-ai .node-role {
+    font-size: 0.62rem;
+  }
+
+  /* Level 3: Bottom Row (MySQL & Cloud) */
+  .node-db {
+    bottom: 4%;
+    left: 2%;
+    top: auto;
+    right: auto;
+    width: 47%;
+    max-width: 47%;
+  }
+
+  .node-cloud {
+    bottom: 4%;
+    right: 2%;
+    top: auto;
+    left: auto;
+    width: 47%;
+    max-width: 47%;
+  }
+
+  /* Offer Section Mobile */
+  .offer-card {
+    padding: 1.5rem 1.25rem;
+    border-radius: var(--radius-lg);
+  }
+
+  .offer-top-badge {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .price-box {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.4rem;
+    padding: 1.1rem;
+  }
+
+  .current-price {
+    font-size: 2.3rem;
+  }
+
+  .original-price {
+    font-size: 1.15rem;
+  }
+
+  .perk-item {
+    font-size: 0.875rem;
+  }
+
+  /* Schedule Card Mobile */
+  .schedule-card {
+    padding: 1.5rem 1.25rem;
+    border-radius: var(--radius-lg);
+  }
+
+  .schedule-grid {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
+
+  .schedule-cell {
+    padding: 0.85rem;
+  }
+
+  .cell-val {
+    font-size: 0.95rem;
+  }
+
+  /* Tech Grid Mobile */
+  .tech-grid {
+    grid-template-columns: 1fr;
+    gap: 0.85rem;
+  }
+
+  .tech-card {
+    padding: 1rem;
+  }
+
+  /* 4-Month Roadmap Mobile */
+  .roadmap-item {
+    padding-left: 48px;
+    margin-bottom: 2.25rem;
+  }
+
+  .roadmap-timeline-spine {
+    left: 15px;
+    width: 2px;
+  }
+
+  .roadmap-node-badge {
+    left: 0;
+    width: 32px;
+    height: 32px;
+    font-size: 0.78rem;
+  }
+
+  .roadmap-card {
+    padding: 1.35rem 1.15rem;
+    border-radius: var(--radius-md);
+  }
+
+  .roadmap-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.35rem;
+    margin-bottom: 0.85rem;
+  }
+
+  .roadmap-month-title {
+    font-size: 1.15rem;
+  }
+
+  .roadmap-tags {
+    gap: 0.35rem;
+  }
+
+  .roadmap-tag {
+    font-size: 0.72rem;
+    padding: 0.2rem 0.5rem;
+  }
+
+  /* Benefits & Projects Grids Mobile */
+  .benefits-grid,
+  .projects-categories-grid,
+  .poc-grid,
+  .career-pillars-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .benefit-card,
+  .project-cat-card,
+  .poc-card,
+  .career-pillar-card {
+    padding: 1.35rem 1.15rem;
+  }
+
+  /* Project Deep Cards Mobile */
+  .project-deep-card {
+    padding: 1.35rem 1.15rem;
+    border-radius: var(--radius-lg);
+  }
+
+  .project-title {
+    font-size: 1.35rem;
+  }
+
+  .project-desc-text {
+    font-size: 0.92rem;
+  }
+
+  .resp-item {
+    font-size: 0.85rem;
+  }
+
+  /* AI Simulator Mobile */
+  .sim-container {
+    padding: 0.85rem;
+    border-radius: var(--radius-md);
+  }
+
+  .sim-label {
+    font-size: 0.65rem;
+  }
+
+  .sim-stats-bar {
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 0.4rem;
+    font-size: 0.68rem;
+  }
+
+  .sim-stat-box {
+    padding: 0.4rem 0.25rem;
+  }
+
+  .sim-stat-val {
+    font-size: 0.95rem;
+  }
+
+  .iot-telemetry-live {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.4rem;
+    font-size: 0.75rem;
+    padding: 0.75rem;
+  }
+
+  /* Instructor Showcase Mobile */
+  .instructor-showcase {
+    padding: 1.5rem 1.15rem;
+    border-radius: var(--radius-lg);
+  }
+
+  .instructor-avatar-frame {
+    width: 140px;
+    height: 140px;
+    margin-bottom: 1rem;
+  }
+
+  .instructor-initials {
+    font-size: 2.5rem;
+  }
+
+  .instructor-name {
+    font-size: 1.4rem;
+  }
+
+  .instructor-title-tag {
+    font-size: 0.78rem;
+  }
+
+  .meta-contact-pill {
+    font-size: 0.8rem;
+    padding: 0.4rem 0.75rem;
+  }
+
+  .instructor-bio {
+    font-size: 0.92rem;
+    text-align: left;
+  }
+
+  .experience-metric-strip {
+    grid-template-columns: 1fr;
+    gap: 0.65rem;
+    padding: 0.9rem;
+  }
+
+  .metric-num {
+    font-size: 1.4rem;
+  }
+
+  .journey-timeline {
+    padding-left: 1.25rem;
+    gap: 1.5rem;
+  }
+
+  .journey-step::before {
+    left: calc(-1.25rem - 5px);
+    width: 8px;
+    height: 8px;
+  }
+
+  .journey-role {
+    font-size: 1.05rem;
+  }
+
+  .journey-desc {
+    font-size: 0.875rem;
+  }
+
+  /* Certificate Showcase Mobile */
+  .certificate-showcase-box {
+    padding: 1.25rem 0.75rem;
+    border-radius: var(--radius-lg);
+  }
+
+  .cert-border-inner {
+    padding: 1.25rem 0.85rem;
+    border-radius: var(--radius-md);
+  }
+
+  .cert-seal {
+    width: 52px;
+    height: 52px;
+    margin-bottom: 0.75rem;
+  }
+
+  .cert-seal svg {
+    width: 26px;
+    height: 26px;
+  }
+
+  .cert-sub {
+    font-size: 0.7rem;
+  }
+
+  .cert-title {
+    font-size: 1.35rem;
+  }
+
+  .cert-recipient {
+    font-size: 0.95rem;
+    padding: 0.2rem 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .cert-footer-row {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    text-align: center;
+    padding-top: 1rem;
+    margin-top: 1.25rem;
+  }
+
+  .cert-footer-row > div {
+    text-align: center !important;
+  }
+
+  /* FAQ Accordion Mobile */
+  .faq-question-btn {
+    padding: 1rem 1.15rem;
+    font-size: 0.95rem;
+    gap: 0.5rem;
+  }
+
+  .faq-chevron {
+    width: 18px;
+    height: 18px;
+  }
+
+  .faq-answer-panel {
+    padding: 0 1.15rem;
+  }
+
+  .faq-item.active .faq-answer-panel {
+    padding: 0 1.15rem 1.15rem 1.15rem;
+  }
+
+  .faq-answer-text {
+    font-size: 0.88rem;
+  }
+
+  /* CTA Banner Mobile */
+  .cta-banner-box {
+    padding: 2rem 1.25rem;
+    border-radius: var(--radius-lg);
+  }
+
+  .cta-actions-group {
+    flex-direction: column;
+    width: 100%;
+    gap: 0.75rem;
+  }
+
+  .cta-actions-group .btn {
+    width: 100%;
+  }
+
+  .contact-direct-strip {
+    flex-direction: column;
+    gap: 0.75rem;
+    margin-top: 1.5rem;
+    padding-top: 1.5rem;
+  }
+
+  .contact-link-item {
+    font-size: 0.85rem;
+  }
+
+  /* Footer Mobile */
+  .footer-main {
+    padding: 3rem 0 1.5rem 0;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .footer-bottom-bar {
+    flex-direction: column;
+    text-align: center;
+    gap: 0.65rem;
+    font-size: 0.78rem;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   4. ULTRA-SMALL DEVICES (max-width: 360px)
+   -------------------------------------------------------------------------- */
+@media screen and (max-width: 360px) {
+  :root {
+    --container-padding: 0.85rem;
+  }
+
+  .hero-title {
+    font-size: 1.85rem;
+  }
+
+  .current-price {
+    font-size: 2rem;
+  }
+
+  .roadmap-item {
+    padding-left: 42px;
+  }
+
+  .roadmap-node-badge {
+    width: 28px;
+    height: 28px;
+    font-size: 0.7rem;
+  }
+
+  .roadmap-timeline-spine {
+    left: 13px;
+  }
+}

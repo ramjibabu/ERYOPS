@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <defs>
+    <linearGradient id="cyanGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00f0ff" />
+      <stop offset="100%" stop-color="#8b5cf6" />
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="6" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  <rect width="200" height="200" rx="40" fill="#07090e"/>
+  <rect x="8" y="8" width="184" height="184" rx="32" fill="none" stroke="url(#cyanGrad)" stroke-width="3" opacity="0.6"/>
+  <!-- Futuristic CPU / Academy Symbol -->
+  <rect x="55" y="55" width="90" height="90" rx="18" fill="#0c101a" stroke="#00f0ff" stroke-width="4" filter="url(#glow)"/>
+  <path d="M75 100 L125 100 M100 75 L100 125" stroke="#00f0ff" stroke-width="4" stroke-linecap="round"/>
+  <circle cx="100" cy="100" r="12" fill="#8b5cf6"/>
+  <circle cx="100" cy="100" r="5" fill="#00f0ff"/>
+  <!-- Pins -->
+  <line x1="100" y1="35" x2="100" y2="55" stroke="#00f0ff" stroke-width="4" stroke-linecap="round"/>
+  <line x1="100" y1="145" x2="100" y2="165" stroke="#00f0ff" stroke-width="4" stroke-linecap="round"/>
+  <line x1="35" y1="100" x2="55" y2="100" stroke="#00f0ff" stroke-width="4" stroke-linecap="round"/>
+  <line x1="145" y1="100" x2="165" y2="100" stroke="#00f0ff" stroke-width="4" stroke-linecap="round"/>
+</svg>

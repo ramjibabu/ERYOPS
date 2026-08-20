@@ -1,0 +1,1827 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Eryops Academy | Full Stack Development with AI in Tamil</title>
+  <meta name="description" content="Learn Full Stack Development with AI through live online Tamil training, real-world projects, AI integration, career guidance and interview preparation.">
+  <meta name="keywords" content="Full Stack Development, AI Training in Tamil, React, Node.js, Express, MongoDB, MySQL, Python AI, Web Development Tamil">
+  
+  <!-- Open Graph Metadata -->
+  <meta property="og:title" content="Eryops Academy | Full Stack Development with AI">
+  <meta property="og:description" content="Live Online Training in Tamil — From Fundamentals to Real-World Full Stack & AI Development. Starts September 7, 2026.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="ACADEMY_WEBSITE">
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/design-tokens.css">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+  <!-- Interactive 3D Canvas Background -->
+  <canvas id="canvas-bg"></canvas>
+  <div class="ambient-glow-1"></div>
+  <div class="ambient-glow-2"></div>
+
+  <!-- =========================================================================
+       NAVIGATION BAR
+       ========================================================================= -->
+  <header class="navbar" id="navbar">
+    <div class="container nav-container">
+      <a href="#hero" class="nav-logo" aria-label="Eryops Academy Home">
+        <div class="logo-symbol">
+          <!-- LOGO IMAGE: Place your logo image at assets/images/logo.png (or change the src path) -->
+          <img src="assets/images/logo.png" alt="Eryops Academy Logo" class="brand-logo-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+          <i data-lucide="cpu" style="display: none;"></i>
+        </div>
+        <div class="logo-text">
+          <span class="brand-name">ERYOPS</span>
+          <span class="brand-sub">ACADEMY</span>
+        </div>
+      </a>
+
+      <!-- Desktop Nav Menu -->
+      <nav class="nav-menu-wrapper" aria-label="Main Navigation">
+        <ul class="nav-menu">
+          <li><a href="#hero" class="nav-link active">Home</a></li>
+          <li><a href="#about" class="nav-link">About</a></li>
+          <li><a href="#course" class="nav-link">Course</a></li>
+          <li><a href="#journey" class="nav-link">Roadmap</a></li>
+          <li><a href="#projects" class="nav-link">Projects</a></li>
+          <li><a href="#instructor" class="nav-link">Instructor</a></li>
+          <li><a href="#certificate" class="nav-link">Certificate</a></li>
+          <li><a href="#faq" class="nav-link">FAQ</a></li>
+          <li><a href="#contact" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+
+      <!-- Desktop Actions -->
+      <div class="nav-actions">
+        <a href="#offer" class="btn btn-outline-cyan btn-sm">Special Offer</a>
+        <a href="GOOGLE_FORM_URL" class="btn btn-primary btn-sm cta-register-btn">Register Now</a>
+      </div>
+
+      <!-- Mobile Hamburger Toggle -->
+      <button class="mobile-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+        <i data-lucide="menu"></i>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer Menu -->
+  <div class="mobile-drawer-overlay"></div>
+  <div class="mobile-drawer" role="dialog" aria-modal="true" aria-label="Mobile Navigation">
+    <div>
+      <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 2rem;">
+        <div class="nav-logo">
+          <div class="logo-symbol">
+            <!-- LOGO IMAGE: Place your logo image at assets/images/logo.png (or change the src path) -->
+            <img src="assets/images/logo.png" alt="Eryops Academy Logo" class="brand-logo-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+            <i data-lucide="cpu" style="display: none;"></i>
+          </div>
+          <div class="logo-text">
+            <span class="brand-name">ERYOPS</span>
+            <span class="brand-sub">ACADEMY</span>
+          </div>
+        </div>
+        <button class="mobile-drawer-close" aria-label="Close navigation menu" style="background: rgba(255,255,255,0.08); border: 1px solid var(--border-glass); border-radius: var(--radius-sm); padding: 0.4rem; color: #fff; cursor: pointer; display: flex; align-items: center; justify-content: center;">
+          <i data-lucide="x"></i>
+        </button>
+      </div>
+      <ul class="mobile-menu-links">
+        <li><a href="#hero" class="mobile-nav-link">Home <i data-lucide="chevron-right"></i></a></li>
+        <li><a href="#about" class="mobile-nav-link">About <i data-lucide="chevron-right"></i></a></li>
+        <li><a href="#course" class="mobile-nav-link">Course Details <i data-lucide="chevron-right"></i></a></li>
+        <li><a href="#journey" class="mobile-nav-link">4-Month Roadmap <i data-lucide="chevron-right"></i></a></li>
+        <li><a href="#projects" class="mobile-nav-link">Real Projects <i data-lucide="chevron-right"></i></a></li>
+        <li><a href="#instructor" class="mobile-nav-link">Instructor Profile <i data-lucide="chevron-right"></i></a></li>
+        <li><a href="#certificate" class="mobile-nav-link">Certificate <i data-lucide="chevron-right"></i></a></li>
+        <li><a href="#faq" class="mobile-nav-link">FAQ <i data-lucide="chevron-right"></i></a></li>
+        <li><a href="#contact" class="mobile-nav-link">Contact <i data-lucide="chevron-right"></i></a></li>
+      </ul>
+    </div>
+    <div class="mobile-drawer-footer">
+      <a href="GOOGLE_FORM_URL" class="btn btn-primary cta-register-btn" style="width: 100%;">Register for September 7 Batch</a>
+      <a href="https://wa.me/919361804523" class="btn btn-whatsapp cta-whatsapp-btn" style="width: 100%;">
+        <i data-lucide="message-circle"></i> Chat on WhatsApp
+      </a>
+    </div>
+  </div>
+
+
+  <!-- =========================================================================
+       1. HERO SECTION
+       ========================================================================= -->
+  <section class="hero-section" id="hero">
+    <div class="container hero-grid">
+      
+      <!-- Left Content -->
+      <div class="hero-content reveal-on-scroll">
+        <div class="hero-badge-group">
+          <span class="badge badge-cyan">
+            <span class="pulse-dot"></span> Live Online Training in Tamil
+          </span>
+          <span class="badge badge-violet">
+            <i data-lucide="sparkles" style="width: 14px; height: 14px;"></i> Full Stack + AI
+          </span>
+        </div>
+
+        <h1 class="hero-title">
+          FULL STACK <span class="text-gradient">DEVELOPMENT</span> WITH AI
+        </h1>
+
+        <p class="hero-subheadline">
+          Live Online Training in Tamil — From Fundamentals to Real-World Full Stack & AI Development
+        </p>
+
+        <!-- Batch & Schedule Key Info Bar -->
+        <div class="hero-key-info-bar">
+          <div class="info-item">
+            <div class="info-icon"><i data-lucide="calendar"></i></div>
+            <div>
+              <div class="info-text-label">Batch Starts</div>
+              <div class="info-text-val">September 7, 2026</div>
+            </div>
+          </div>
+          <div class="info-item">
+            <div class="info-icon"><i data-lucide="clock"></i></div>
+            <div>
+              <div class="info-text-label">Schedule</div>
+              <div class="info-text-val">4 Months • Mon–Fri</div>
+            </div>
+          </div>
+          <div class="info-item">
+            <div class="info-icon"><i data-lucide="video"></i></div>
+            <div>
+              <div class="info-text-label">Class Time</div>
+              <div class="info-text-val">6:00 PM – 7:30 PM</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Action CTAs -->
+        <div class="hero-actions">
+          <a href="GOOGLE_FORM_URL" class="btn btn-primary btn-lg cta-register-btn">
+            <span>Register for September 7 Batch</span>
+            <i data-lucide="arrow-right"></i>
+          </a>
+          <a href="#course" class="btn btn-secondary btn-lg">
+            <span>Explore Curriculum</span>
+            <i data-lucide="layers"></i>
+          </a>
+        </div>
+
+        <!-- Trust Points -->
+        <div class="hero-trust-points">
+          <div class="trust-item">
+            <i data-lucide="check-circle-2"></i>
+            <span>Real-World Software Engineer</span>
+          </div>
+          <div class="trust-item">
+            <i data-lucide="check-circle-2"></i>
+            <span>Project-Based Learning</span>
+          </div>
+          <div class="trust-item">
+            <i data-lucide="check-circle-2"></i>
+            <span>Session Recordings Included</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right 3D Interactive Ecosystem Visual -->
+      <div class="hero-ecosystem-wrapper reveal-on-scroll">
+        <div class="ecosystem-stage">
+          <div class="ecosystem-grid-lines"></div>
+
+          <!-- Header HUD -->
+          <div class="ecosystem-header">
+            <div class="ecosystem-title-group">
+              <i data-lucide="network" style="width: 16px; height: 16px; color: var(--accent-cyan);"></i>
+              <span class="ecosystem-title">FULL-STACK AI ECOSYSTEM</span>
+            </div>
+            <span class="status-pill"><span class="pulse-dot"></span> LIVE ARCH</span>
+          </div>
+
+          <!-- Canvas / Node Stage -->
+          <div class="ecosystem-canvas-box">
+            <!-- SVG Circuit Connections -->
+            <svg class="ecosystem-svg" viewBox="0 0 460 380">
+              <!-- React to AI -->
+              <path class="circuit-line" d="M 120 70 Q 230 110 230 190" />
+              <!-- Node to AI -->
+              <path class="circuit-line" d="M 340 70 Q 230 110 230 190" />
+              <!-- AI to DB -->
+              <path class="circuit-line-violet" d="M 230 190 Q 150 250 120 310" />
+              <!-- AI to Cloud -->
+              <path class="circuit-line-violet" d="M 230 190 Q 310 250 340 310" />
+              <!-- Cross link DB to Cloud -->
+              <path class="circuit-line" d="M 120 310 L 340 310" />
+            </svg>
+
+            <!-- Node 1: React.js -->
+            <div class="eco-node node-react" data-node-type="react">
+              <div class="eco-node-icon"><i data-lucide="code-2"></i></div>
+              <div class="eco-node-label">
+                <span class="node-name">React.js</span>
+                <span class="node-role">Frontend UI</span>
+              </div>
+            </div>
+
+            <!-- Node 2: Node.js / Express -->
+            <div class="eco-node node-node" data-node-type="node">
+              <div class="eco-node-icon"><i data-lucide="server"></i></div>
+              <div class="eco-node-label">
+                <span class="node-name">Node.js</span>
+                <span class="node-role">REST APIs</span>
+              </div>
+            </div>
+
+            <!-- Central Node: AI Engine -->
+            <div class="eco-node node-center-ai" data-node-type="ai">
+              <div class="eco-node-icon"><i data-lucide="bot"></i></div>
+              <div class="eco-node-label">
+                <span class="node-name">AI Tools & APIs</span>
+                <span class="node-role" style="color: #c084fc;">Intelligent Layer</span>
+              </div>
+            </div>
+
+            <!-- Node 3: Databases -->
+            <div class="eco-node node-db" data-node-type="db">
+              <div class="eco-node-icon"><i data-lucide="database"></i></div>
+              <div class="eco-node-label">
+                <span class="node-name">MySQL & MongoDB</span>
+                <span class="node-role">Data Layer</span>
+              </div>
+            </div>
+
+            <!-- Node 4: Cloud & Deployment -->
+            <div class="eco-node node-cloud" data-node-type="cloud">
+              <div class="eco-node-icon"><i data-lucide="cloud"></i></div>
+              <div class="eco-node-label">
+                <span class="node-name">AWS & Cloud</span>
+                <span class="node-role">Deployment</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- =========================================================================
+       2. SPECIAL OFFER & COURSE SCHEDULE
+       ========================================================================= -->
+  <section class="section" id="offer">
+    <div class="container">
+      <div class="section-header reveal-on-scroll">
+        <span class="section-tag"><i data-lucide="tag"></i> Special Batch Enrollment</span>
+        <h2 class="section-title">Transparent Pricing & <span class="text-gradient">Structured Schedule</span></h2>
+        <p class="section-desc">Serious technical training designed to fit around college or work schedules, backed by real engineering practice.</p>
+      </div>
+
+      <div class="offer-section-grid">
+        
+        <!-- Offer Card -->
+        <div class="offer-card reveal-on-scroll">
+          <div>
+            <div class="offer-top-badge">
+              <span class="offer-badge">Independence Day Special Offer</span>
+              <span class="batch-tag">Limited Special Batch Offer</span>
+            </div>
+
+            <h3 class="offer-heading">Full Stack Development with AI</h3>
+            <p class="offer-desc">Complete 4-month live interactive program from foundational web architecture to AI-integrated deployment.</p>
+
+            <div class="price-box">
+              <div class="current-price">₹5,999</div>
+              <div class="original-price">₹40,000</div>
+              <span class="discount-pill">Limited Seats Available</span>
+            </div>
+
+            <ul class="offer-perks">
+              <li class="perk-item">
+                <i data-lucide="check-circle-2"></i>
+                <span>4 Months Live Interactive Training in Tamil</span>
+              </li>
+              <li class="perk-item">
+                <i data-lucide="check-circle-2"></i>
+                <span>Full Session Recordings Included for Revision</span>
+              </li>
+              <li class="perk-item">
+                <i data-lucide="check-circle-2"></i>
+                <span>Real-World Project Development & Code Reviews</span>
+              </li>
+              <li class="perk-item">
+                <i data-lucide="check-circle-2"></i>
+                <span>AI Tools & AI API Integration Modules</span>
+              </li>
+              <li class="perk-item">
+                <i data-lucide="check-circle-2"></i>
+                <span>Placement & Career Guidance + Interview Prep</span>
+              </li>
+              <li class="perk-item">
+                <i data-lucide="check-circle-2"></i>
+                <span>Eryops Academy Course Completion Certificate</span>
+              </li>
+            </ul>
+          </div>
+
+          <a href="GOOGLE_FORM_URL" class="btn btn-primary btn-lg cta-register-btn">
+            <span>Reserve Your Seat</span>
+            <i data-lucide="arrow-right"></i>
+          </a>
+        </div>
+
+        <!-- Schedule Card -->
+        <div class="schedule-card reveal-on-scroll">
+          <div class="schedule-header">
+            <div class="section-tag violet" style="margin-bottom: 0.75rem;">
+              <i data-lucide="clock"></i> Class Timetable
+            </div>
+            <h3>Weekly Training Structure</h3>
+            <p style="font-size: 0.95rem; color: var(--text-secondary); margin-top: 0.35rem;">
+              Consistent weekday learning with dedicated weekend career mentorship.
+            </p>
+          </div>
+
+          <div class="schedule-grid">
+            <div class="schedule-cell">
+              <div class="cell-label"><i data-lucide="calendar"></i> Course Duration</div>
+              <div class="cell-val">4 Months</div>
+              <div class="cell-sub">Structured 16-week curriculum</div>
+            </div>
+
+            <div class="schedule-cell">
+              <div class="cell-label"><i data-lucide="monitor"></i> Mode of Learning</div>
+              <div class="cell-val">Live Online</div>
+              <div class="cell-sub">Interactive screen sharing & labs</div>
+            </div>
+
+            <div class="schedule-cell">
+              <div class="cell-label"><i data-lucide="clock"></i> Monday – Friday</div>
+              <div class="cell-val">6:00 PM – 7:30 PM</div>
+              <div class="cell-sub">Live technical instruction</div>
+            </div>
+
+            <div class="schedule-cell">
+              <div class="cell-label"><i data-lucide="compass"></i> Saturday</div>
+              <div class="cell-val">Career & Interviews</div>
+              <div class="cell-sub">Resume, GitHub & mock prep</div>
+            </div>
+
+            <div class="schedule-cell">
+              <div class="cell-label"><i data-lucide="coffee"></i> Sunday</div>
+              <div class="cell-val">Holiday</div>
+              <div class="cell-sub">Rest & project practice</div>
+            </div>
+
+            <div class="schedule-cell">
+              <div class="cell-label"><i data-lucide="video"></i> Recordings</div>
+              <div class="cell-val">Included</div>
+              <div class="cell-sub">Session recordings provided</div>
+            </div>
+          </div>
+
+          <div class="schedule-footer" style="background: rgba(10, 14, 24, 0.6); padding: 1.1rem; border-radius: var(--radius-md); border: 1px solid var(--border-glass);">
+            <div style="display: flex; align-items: center; gap: 0.75rem;">
+              <i data-lucide="languages" style="color: var(--accent-cyan); width: 22px; height: 22px;"></i>
+              <div>
+                <strong style="color: #ffffff; font-size: 0.95rem;">Language Medium: Tamil + English Tech Terms</strong>
+                <p style="font-size: 0.85rem; color: #94a3b8; margin-top: 0.15rem;">
+                  Clear conceptual explanations in Tamil while preserving industry-standard technical vocabulary.
+                </p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- =========================================================================
+       3. WHAT YOU WILL LEARN (Interactive Tech Matrix)
+       ========================================================================= -->
+  <section class="section" id="course">
+    <div class="container">
+      <div class="section-header reveal-on-scroll">
+        <span class="section-tag"><i data-lucide="layers"></i> Comprehensive Curriculum</span>
+        <h2 class="section-title">What You Will <span class="text-gradient">Learn & Master</span></h2>
+        <p class="section-desc">An interactive technology ecosystem built to mirror modern engineering standards.</p>
+      </div>
+
+      <!-- Filter Tabs -->
+      <div class="tech-filter-tabs reveal-on-scroll">
+        <button class="filter-btn active" data-filter="all">All Technologies</button>
+        <button class="filter-btn" data-filter="frontend">Frontend</button>
+        <button class="filter-btn" data-filter="backend">Backend</button>
+        <button class="filter-btn" data-filter="database">Database</button>
+        <button class="filter-btn" data-filter="auth">Auth & Security</button>
+        <button class="filter-btn" data-filter="tools">Cloud & Tools</button>
+        <button class="filter-btn" data-filter="ai">AI Tools & Integration</button>
+      </div>
+
+      <!-- Interactive Grid of Tech Cards -->
+      <div class="tech-grid reveal-on-scroll">
+        
+        <!-- Frontend -->
+        <div class="tech-card" data-category="frontend">
+          <div class="tech-card-icon"><i data-lucide="code-2"></i></div>
+          <div class="tech-card-info">
+            <span class="tech-card-title">HTML5 & Semantic Web</span>
+            <span class="tech-card-cat">Frontend Core</span>
+          </div>
+        </div>
+
+        <div class="tech-card" data-category="frontend">
+          <div class="tech-card-icon"><i data-lucide="palette"></i></div>
+          <div class="tech-card-info">
+            <span class="tech-card-title">CSS3 & Media Queries</span>
+            <span class="tech-card-cat">Responsive Styling</span>
+          </div>
+        </div>
+
+        <div class="tech-card" data-category="frontend">
+          <div class="tech-card-icon"><i data-lucide="layout"></i></div>
+          <div class="tech-card-info">
+            <span class="tech-card-title">Bootstrap</span>
+            <span class="tech-card-cat">UI Framework</span>
+          </div>
+        </div>
+
+        <div class="tech-card" data-category="frontend">
+          <div class="tech-card-icon"><i data-lucide="file-code"></i></div>
+          <div class="tech-card-info">
+            <span class="tech-card-title">JavaScript (ES6+)</span>
+            <span class="tech-card-cat">Core Programming</span>
+          </div>
+        </div>
+
+        <div class="tech-card" data-category="frontend">
+          <div class="tech-card-icon"><i data-lucide="component"></i></div>
+          <div class="tech-card-info">
+            <span class="tech-card-title">React.js</span>
+            <span class="tech-card-cat">Components & State</span>
+          </div>
+        </div>
+
+        <div class="tech-card" data-category="frontend">
+          <div class="tech-card-icon"><i data-lucide="zap"></i></div>
+          <div class="tech-card-info">
+            <span class="tech-card-title">Vite</span>
+            <span class="tech-card-cat">Next-Gen Bundling</span>
+          </div>
+        </div>
+
+        <div class="tech-card" data-category="frontend">
+          <div class="tech-card-icon"><i data-lucide="boxes"></i></div>
+          <div class="tech-card-info">
+            <span class="tech-card-title">Redux</span>
+            <span class="tech-card-cat">State Management</span>
+          </div>
+        </div>
+
+        <!-- Backend -->
+        <div class="tech-card" data-category="backend">
+          <div class="tech-card-icon"><i data-lucide="server"></i></div>
+          <div class="tech-card-info">
+            <span class="tech-card-title">Node.js</span>
+            <span class="tech-card-cat">Backend Runtime</span>
+          </div>
+        </div>
+
+        <div class="tech-card" data-category="backend">
+          <div class="tech-card-icon"><i data-lucide="terminal"></i></div>
+          <div class="tech-card-info">
+            <span class="tech-card-title">Express.js</span>
+            <span class="tech-card-cat">Web Framework</span>
+          </div>
+        </div>
+
+        <div class="tech-card" data-category="backend">
+          <div class="tech-card-icon"><i data-lucide="link-2"></i></div>
+          <div class="tech-card-info">
+            <span class="tech-card-title">REST APIs</span>
+            <span class="tech-card-cat">API Architecture</span>
+          </div>
+        </div>
+
+        <!-- Database -->
+        <div class="tech-card" data-category="database">
+          <div class="tech-card-icon"><i data-lucide="database"></i></div>
+          <div class="tech-card-info">
+            <span class="tech-card-title">MongoDB</span>
+            <span class="tech-card-cat">NoSQL Document Store</span>
+          </div>
+        </div>
+
+        <div class="tech-card" data-category="database">
+          <div class="tech-card-icon"><i data-lucide="table"></i></div>
+          <div class="tech-card-info">
+            <span class="tech-card-title">MySQL & SQL</span>
+            <span class="tech-card-cat">Relational Database</span>
+          </div>
+        </div>
+
+        <!-- Auth & Security -->
+        <div class="tech-card" data-category="auth">
+          <div class="tech-card-icon"><i data-lucide="key"></i></div>
+          <div class="tech-card-info">
+            <span class="tech-card-title">JWT Authentication</span>
+            <span class="tech-card-cat">Token-Based Security</span>
+          </div>
+        </div>
+
+        <div class="tech-card" data-category="auth">
+          <div class="tech-card-icon"><i data-lucide="shield-check"></i></div>
+          <div class="tech-card-info">
+            <span class="tech-card-title">RBAC Authorization</span>
+            <span class="tech-card-cat">Role-Based Access</span>
+          </div>
+        </div>
+
+        <div class="tech-card" data-category="auth">
+          <div class="tech-card-icon"><i data-lucide="lock"></i></div>
+          <div class="tech-card-info">
+            <span class="tech-card-title">Secure API Practices</span>
+            <span class="tech-card-cat">Sanitization & Headers</span>
+          </div>
+        </div>
+
+        <!-- Cloud & Dev Tools -->
+        <div class="tech-card" data-category="tools">
+          <div class="tech-card-icon"><i data-lucide="git-branch"></i></div>
+          <div class="tech-card-info">
+            <span class="tech-card-title">Git & GitHub</span>
+            <span class="tech-card-cat">Version Control</span>
+          </div>
+        </div>
+
+        <div class="tech-card" data-category="tools">
+          <div class="tech-card-icon"><i data-lucide="send"></i></div>
+          <div class="tech-card-info">
+            <span class="tech-card-title">Postman</span>
+            <span class="tech-card-cat">API Testing & Docs</span>
+          </div>
+        </div>
+
+        <div class="tech-card" data-category="tools">
+          <div class="tech-card-icon"><i data-lucide="cloud"></i></div>
+          <div class="tech-card-info">
+            <span class="tech-card-title">AWS & Cloud Fundamentals</span>
+            <span class="tech-card-cat">Hosting & Deployment</span>
+          </div>
+        </div>
+
+        <div class="tech-card" data-category="tools">
+          <div class="tech-card-icon"><i data-lucide="workflow"></i></div>
+          <div class="tech-card-info">
+            <span class="tech-card-title">Azure Data Factory Concepts</span>
+            <span class="tech-card-cat">ETL Data Pipelines</span>
+          </div>
+        </div>
+
+        <!-- AI Tools & Integration -->
+        <div class="tech-card" data-category="ai">
+          <div class="tech-card-icon"><i data-lucide="sparkles"></i></div>
+          <div class="tech-card-info">
+            <span class="tech-card-title">AI Tools for Developers</span>
+            <span class="tech-card-cat">AI-Assisted Workflow</span>
+          </div>
+        </div>
+
+        <div class="tech-card" data-category="ai">
+          <div class="tech-card-icon"><i data-lucide="bot"></i></div>
+          <div class="tech-card-info">
+            <span class="tech-card-title">AI API Integration</span>
+            <span class="tech-card-cat">Connecting LLM APIs</span>
+          </div>
+        </div>
+
+        <div class="tech-card" data-category="ai">
+          <div class="tech-card-icon"><i data-lucide="message-square"></i></div>
+          <div class="tech-card-info">
+            <span class="tech-card-title">AI Chatbot Development</span>
+            <span class="tech-card-cat">Intelligent Assistants</span>
+          </div>
+        </div>
+
+        <div class="tech-card" data-category="ai">
+          <div class="tech-card-icon"><i data-lucide="cpu"></i></div>
+          <div class="tech-card-info">
+            <span class="tech-card-title">Practical Full-Stack AI</span>
+            <span class="tech-card-cat">Real Application Embedding</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- =========================================================================
+       4. 4-MONTH LEARNING JOURNEY (Animated Roadmap)
+       ========================================================================= -->
+  <section class="section" id="journey">
+    <div class="container">
+      <div class="section-header reveal-on-scroll">
+        <span class="section-tag"><i data-lucide="milestone"></i> Step-by-Step Evolution</span>
+        <h2 class="section-title">The 4-Month <span class="text-gradient">Learning Roadmap</span></h2>
+        <p class="section-desc">A structured progression taking you from foundational syntax to building deployable, AI-powered applications.</p>
+      </div>
+
+      <div class="roadmap-container reveal-on-scroll">
+        <div class="roadmap-timeline-spine"></div>
+
+        <!-- Month 1 -->
+        <div class="roadmap-item">
+          <div class="roadmap-node-badge">M1</div>
+          <div class="roadmap-card">
+            <div class="roadmap-header">
+              <div>
+                <span class="badge badge-cyan" style="margin-bottom: 0.5rem;">Month 1 • Foundation</span>
+                <h3 class="roadmap-month-title">Web Development Foundation</h3>
+              </div>
+              <span class="mono-tag" style="color: var(--accent-cyan);">Weeks 1 – 4</span>
+            </div>
+            <p style="color: #cbd5e1; font-size: 0.95rem;">
+              Build rock-solid fundamentals in semantic markup, modern CSS styling, mobile responsiveness, and dynamic JavaScript DOM manipulation.
+            </p>
+            <div class="roadmap-tags">
+              <span class="roadmap-tag">HTML5</span>
+              <span class="roadmap-tag">CSS3</span>
+              <span class="roadmap-tag">Responsive Design</span>
+              <span class="roadmap-tag">Bootstrap</span>
+              <span class="roadmap-tag">Media Queries</span>
+              <span class="roadmap-tag">JavaScript Fundamentals</span>
+              <span class="roadmap-tag">Git & GitHub</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Month 2 -->
+        <div class="roadmap-item">
+          <div class="roadmap-node-badge">M2</div>
+          <div class="roadmap-card">
+            <div class="roadmap-header">
+              <div>
+                <span class="badge badge-violet" style="margin-bottom: 0.5rem;">Month 2 • Frontend</span>
+                <h3 class="roadmap-month-title">Frontend Development with React</h3>
+              </div>
+              <span class="mono-tag" style="color: #c084fc;">Weeks 5 – 8</span>
+            </div>
+            <p style="color: #cbd5e1; font-size: 0.95rem;">
+              Master component-driven architecture, declarative state management, custom React hooks, API integration, and Redux global state.
+            </p>
+            <div class="roadmap-tags">
+              <span class="roadmap-tag">React.js</span>
+              <span class="roadmap-tag">Components & Props</span>
+              <span class="roadmap-tag">State & Hooks</span>
+              <span class="roadmap-tag">Forms & Validation</span>
+              <span class="roadmap-tag">REST API Integration</span>
+              <span class="roadmap-tag">Redux State Management</span>
+              <span class="roadmap-tag">Vite Tooling</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Month 3 -->
+        <div class="roadmap-item">
+          <div class="roadmap-node-badge">M3</div>
+          <div class="roadmap-card">
+            <div class="roadmap-header">
+              <div>
+                <span class="badge badge-violet" style="margin-bottom: 0.5rem;">Month 3 • Backend</span>
+                <h3 class="roadmap-month-title">Backend Architecture & Databases</h3>
+              </div>
+              <span class="mono-tag" style="color: #c084fc;">Weeks 9 – 12</span>
+            </div>
+            <p style="color: #cbd5e1; font-size: 0.95rem;">
+              Design secure server-side applications, implement robust REST endpoints, handle JWT authentication, and manage SQL/NoSQL schemas.
+            </p>
+            <div class="roadmap-tags">
+              <span class="roadmap-tag">Node.js</span>
+              <span class="roadmap-tag">Express.js</span>
+              <span class="roadmap-tag">REST API Design</span>
+              <span class="roadmap-tag">JWT Authentication</span>
+              <span class="roadmap-tag">Authorization & RBAC</span>
+              <span class="roadmap-tag">MongoDB & Mongoose</span>
+              <span class="roadmap-tag">MySQL & SQL Queries</span>
+              <span class="roadmap-tag">CRUD Operations</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Month 4 -->
+        <div class="roadmap-item">
+          <div class="roadmap-node-badge">M4</div>
+          <div class="roadmap-card">
+            <div class="roadmap-header">
+              <div>
+                <span class="badge badge-emerald" style="margin-bottom: 0.5rem;">Month 4 • Full Stack & AI</span>
+                <h3 class="roadmap-month-title">Full Stack + AI Integration & Career Prep</h3>
+              </div>
+              <span class="mono-tag" style="color: #34d399;">Weeks 13 – 16</span>
+            </div>
+            <p style="color: #cbd5e1; font-size: 0.95rem;">
+              Connect all pieces into a complete end-to-end full-stack capstone project, integrate AI tools & chatbots, deploy to the cloud, and prepare for interviews.
+            </p>
+            <div class="roadmap-tags">
+              <span class="roadmap-tag">Full-Stack Architecture</span>
+              <span class="roadmap-tag">Real-World Project</span>
+              <span class="roadmap-tag">AI Developer Tools</span>
+              <span class="roadmap-tag">AI API Integration</span>
+              <span class="roadmap-tag">AI Chatbot Build</span>
+              <span class="roadmap-tag">Cloud Deployment</span>
+              <span class="roadmap-tag">GitHub Portfolio</span>
+              <span class="roadmap-tag">Interview Prep</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- =========================================================================
+       5. WHAT STUDENTS GET & LEARN BY BUILDING
+       ========================================================================= -->
+  <section class="section" id="benefits">
+    <div class="container">
+      <div class="section-header reveal-on-scroll">
+        <span class="section-tag"><i data-lucide="gift"></i> Student Benefits</span>
+        <h2 class="section-title">What Every <span class="text-gradient">Student Receives</span></h2>
+        <p class="section-desc">Comprehensive support structure focused on real learning outcomes and developer readiness.</p>
+      </div>
+
+      <div class="benefits-grid reveal-on-scroll">
+        <div class="benefit-card">
+          <div class="benefit-icon"><i data-lucide="video"></i></div>
+          <h3 class="benefit-title">Live Interactive Classes</h3>
+          <p class="benefit-text">Learn directly through live sessions with interactive code walkthroughs and instant doubt clearing.</p>
+        </div>
+
+        <div class="benefit-card">
+          <div class="benefit-icon"><i data-lucide="play-circle"></i></div>
+          <h3 class="benefit-title">Session Recordings</h3>
+          <p class="benefit-text">Access class recordings after every session so you never miss a concept and can revise at your pace.</p>
+        </div>
+
+        <div class="benefit-card">
+          <div class="benefit-icon"><i data-lucide="code"></i></div>
+          <h3 class="benefit-title">Real-World Projects</h3>
+          <p class="benefit-text">Build practical applications instead of only learning theory, preparing you for real development environments.</p>
+        </div>
+
+        <div class="benefit-card">
+          <div class="benefit-icon"><i data-lucide="bot"></i></div>
+          <h3 class="benefit-title">AI Tools & Integration</h3>
+          <p class="benefit-text">Learn how modern developers use AI tools effectively and integrate AI capabilities into full-stack web applications.</p>
+        </div>
+
+        <div class="benefit-card">
+          <div class="benefit-icon">
+            <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"></path>
+              <path d="M9 18c-4.51 2-5-2-7-2"></path>
+            </svg>
+          </div>
+          <h3 class="benefit-title">GitHub & Portfolio Guidance</h3>
+          <p class="benefit-text">Build a clean, professional GitHub profile with well-documented repositories to showcase your engineering abilities.</p>
+        </div>
+
+        <div class="benefit-card">
+          <div class="benefit-icon"><i data-lucide="compass"></i></div>
+          <h3 class="benefit-title">Career Guidance</h3>
+          <p class="benefit-text">Understand how to search and apply for software jobs effectively across tech platforms and developer networks.</p>
+        </div>
+
+        <div class="benefit-card">
+          <div class="benefit-icon"><i data-lucide="users"></i></div>
+          <h3 class="benefit-title">Interview Preparation</h3>
+          <p class="benefit-text">Structured technical and HR interview guidance covering core concepts, live problem solving, and communication.</p>
+        </div>
+
+        <div class="benefit-card">
+          <div class="benefit-icon"><i data-lucide="award"></i></div>
+          <h3 class="benefit-title">Course Completion Certificate</h3>
+          <p class="benefit-text">Official Eryops Academy Certificate provided upon successful completion of curriculum and project requirements.</p>
+        </div>
+      </div>
+
+      <!-- Learn By Building Sub-Section -->
+      <div style="margin-top: 5rem;" class="reveal-on-scroll">
+        <div class="section-header">
+          <span class="section-tag violet"><i data-lucide="terminal"></i> Practical Development</span>
+          <h2 class="section-title">Learn by <span class="text-gradient-accent">Building</span></h2>
+          <p class="section-desc">You do not just watch tutorials — you write code, debug real issues, and build functional application categories.</p>
+        </div>
+
+        <div class="projects-categories-grid">
+          <div class="project-cat-card">
+            <span class="cat-num">01 / ARCHITECTURE</span>
+            <h4 style="color: #ffffff; font-size: 1.15rem;">Full Stack Web Application</h4>
+            <p style="font-size: 0.9rem; color: #94a3b8;">End-to-end web system connecting React frontend, Express API routes, and database persistence.</p>
+          </div>
+
+          <div class="project-cat-card">
+            <span class="cat-num">02 / COMMERCE</span>
+            <h4 style="color: #ffffff; font-size: 1.15rem;">E-Commerce Application</h4>
+            <p style="font-size: 0.9rem; color: #94a3b8;">Product catalog, cart management, user state, and checkout workflow architecture.</p>
+          </div>
+
+          <div class="project-cat-card">
+            <span class="cat-num">03 / ENTERPRISE</span>
+            <h4 style="color: #ffffff; font-size: 1.15rem;">Dashboard & Admin Portal</h4>
+            <p style="font-size: 0.9rem; color: #94a3b8;">Role-based authentication, interactive charts, CRUD metrics, and management dashboards.</p>
+          </div>
+
+          <div class="project-cat-card">
+            <span class="cat-num">04 / INTELLIGENCE</span>
+            <h4 style="color: #ffffff; font-size: 1.15rem;">AI-Powered Application</h4>
+            <p style="font-size: 0.9rem; color: #94a3b8;">Integrating AI APIs to enable natural language processing, intelligent search, or conversational chatbots.</p>
+          </div>
+
+          <div class="project-cat-card">
+            <span class="cat-num">05 / INTEGRATION</span>
+            <h4 style="color: #ffffff; font-size: 1.15rem;">API-Based Application</h4>
+            <p style="font-size: 0.9rem; color: #94a3b8;">Consuming external REST endpoints, rate limit handling, data sanitization, and structured caching.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- =========================================================================
+       6. INSTRUCTOR SECTION & ENGINEERING JOURNEY
+       ========================================================================= -->
+  <section class="section" id="instructor">
+    <div class="container">
+      <div class="section-header reveal-on-scroll">
+        <span class="section-tag"><i data-lucide="user-check"></i> Verified Engineering Experience</span>
+        <h2 class="section-title">Learn From Real-World <span class="text-gradient">Development Experience</span></h2>
+        <p class="section-desc">Training conducted by an active software engineer who builds, deploys, and maintains enterprise applications.</p>
+      </div>
+
+      <!-- Instructor Showcase Box -->
+      <div class="instructor-showcase reveal-on-scroll">
+        <div class="instructor-grid">
+          
+          <!-- Visual / Avatar -->
+          <div class="instructor-visual-box">
+            <div class="instructor-avatar-frame">
+              <!-- INSTRUCTOR PHOTO: Place your photo at assets/images/instructor.png (or change the src path) -->
+              <img src="assets/images/instructor.png" alt="Ramjibabu S - Instructor" class="instructor-avatar-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+              <span class="instructor-initials" style="display: none;">RS</span>
+            </div>
+            <h3 class="instructor-name">RAMJIBABU S</h3>
+            <div class="instructor-title-tag">Software Engineer — Full Stack Developer</div>
+            
+            <div class="instructor-meta-tags">
+              <a href="tel:+919361804523" class="meta-contact-pill">
+                <i data-lucide="phone" style="width: 14px; height: 14px; color: var(--accent-cyan);"></i>
+                <span>+91 93618 04523</span>
+              </a>
+              <a href="mailto:rb066651@gmail.com" class="meta-contact-pill">
+                <i data-lucide="mail" style="width: 14px; height: 14px; color: var(--accent-cyan);"></i>
+                <span>rb066651@gmail.com</span>
+              </a>
+              <div class="meta-contact-pill">
+                <i data-lucide="map-pin" style="width: 14px; height: 14px; color: var(--accent-cyan);"></i>
+                <span>Chennai, Tamil Nadu</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Professional Bio & Stats -->
+          <div class="instructor-info-box">
+            <div class="badge badge-emerald" style="margin-bottom: 1rem;">
+              <i data-lucide="shield-check" style="width: 14px; height: 14px;"></i> Verified Industry Experience
+            </div>
+            
+            <p class="instructor-bio">
+              <strong>Ramjibabu S</strong> is a Software Engineer and Full Stack Developer with hands-on enterprise development experience across <strong>AI, IoT, SaaS, Banking, Healthcare, Government applications, and Cloud ETL integrations</strong>.
+            </p>
+            <p class="instructor-bio" style="font-size: 0.975rem; color: #94a3b8;">
+              Having contributed to production-grade applications at <strong>PVVN Tek Ventures LLP</strong>, his teaching methodology emphasizes real-world architectural principles, security practices, clean code standards, and practical AI integrations rather than just abstract syntax.
+            </p>
+
+            <div class="experience-metric-strip">
+              <div class="metric-item">
+                <span class="metric-num">13+</span>
+                <span class="metric-label">Enterprise Apps Contributed</span>
+              </div>
+              <div class="metric-item">
+                <span class="metric-num">6+</span>
+                <span class="metric-label">Domains (AI, IoT, SaaS, Bank)</span>
+              </div>
+              <div class="metric-item">
+                <span class="metric-num">Tamil</span>
+                <span class="metric-label">Direct Medium of Instruction</span>
+              </div>
+            </div>
+
+            <!-- Engineering Journey Timeline -->
+            <div style="margin-top: 1.5rem;">
+              <h4 style="font-size: 1.15rem; color: #ffffff; margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem;">
+                <i data-lucide="git-commit" style="color: var(--accent-cyan);"></i> My Engineering Journey
+              </h4>
+              
+              <div class="journey-timeline">
+                
+                <!-- 2024 -->
+                <div class="journey-step">
+                  <div class="journey-year">2024 — Internships</div>
+                  <div class="journey-role">Virtual Internships</div>
+                  <div class="journey-company">CodTech IT Solutions & LetsGrowMore</div>
+                  <div class="journey-desc">
+                    Worked on mobile-responsive eCommerce application, blog application CRUD functionality, MERN stack development, and REST API integration.
+                  </div>
+                </div>
+
+                <!-- 2025 Trainee -->
+                <div class="journey-step">
+                  <div class="journey-year">June 2025 – August 2025</div>
+                  <div class="journey-role">Software Trainee</div>
+                  <div class="journey-company">PVVN Tek Ventures LLP</div>
+                  <div class="journey-desc">
+                    Application testing, bug analysis, feature validation, and security testing across enterprise applications.
+                  </div>
+                </div>
+
+                <!-- 2025-2026 Specialist -->
+                <div class="journey-step present">
+                  <div class="journey-year">September 2025 – Present</div>
+                  <div class="journey-role">Technology Specialist</div>
+                  <div class="journey-company">PVVN Tek Ventures LLP</div>
+                  <div class="journey-desc">
+                    Professional contribution to 13+ enterprise applications across AI, IoT, SaaS, Banking, Healthcare, and Government systems using React.js, React Native, Node.js, Express.js, MySQL, REST APIs, JWT, RBAC, and Azure Data Factory.
+                  </div>
+                </div>
+
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- =========================================================================
+       7. REAL-WORLD ENGINEERING PROJECTS
+       ========================================================================= -->
+  <section class="section" id="projects">
+    <div class="container">
+      <div class="section-header reveal-on-scroll">
+        <span class="section-tag"><i data-lucide="cpu"></i> Real-World Project Experience</span>
+        <h2 class="section-title">Beyond Tutorials. <span class="text-gradient">Real Engineering.</span></h2>
+        <p class="section-desc">Explore verified enterprise projects and architectural solutions developed across real software environments.</p>
+      </div>
+
+      <div class="projects-showcase-grid">
+
+        <!-- PROJECT 1: AI BAG COUNTING SYSTEM -->
+        <div class="project-deep-card reveal-on-scroll">
+          <div class="project-layout-grid">
+            <div>
+              <div class="project-meta-row">
+                <span class="badge badge-cyan">AI & Computer Vision</span>
+                <span class="mono-tag" style="color: var(--accent-cyan);">Warehouse Automation</span>
+              </div>
+              <h3 class="project-title">AI Bag Counting System</h3>
+              <p class="project-desc-text">
+                Designed and developed an AI-powered warehouse automation platform for detecting and counting bags from live RTSP camera streams. Developed independently as an end-to-end production application.
+              </p>
+              
+              <ul class="project-responsibilities">
+                <li class="resp-item">
+                  <i data-lucide="check"></i>
+                  <span>Full web application development using React.js, Vite, Node.js, Express.js & MySQL</span>
+                </li>
+                <li class="resp-item">
+                  <i data-lucide="check"></i>
+                  <span>Python computer vision service with YOLO detection and ByteTrack object tracking</span>
+                </li>
+                <li class="resp-item">
+                  <i data-lucide="check"></i>
+                  <span>RTSP live video processing and streaming real-time detection output to the web dashboard</span>
+                </li>
+                <li class="resp-item">
+                  <i data-lucide="check"></i>
+                  <span>Authentication, Role-Based Access Control, Evidence video generation & audit reporting</span>
+                </li>
+              </ul>
+
+              <div class="roadmap-tags">
+                <span class="roadmap-tag">React.js</span>
+                <span class="roadmap-tag">Vite</span>
+                <span class="roadmap-tag">Node.js</span>
+                <span class="roadmap-tag">Express.js</span>
+                <span class="roadmap-tag">MySQL</span>
+                <span class="roadmap-tag">Python</span>
+                <span class="roadmap-tag">YOLO</span>
+                <span class="roadmap-tag">ByteTrack</span>
+                <span class="roadmap-tag">RTSP</span>
+              </div>
+            </div>
+
+            <!-- Interactive AI Vision Canvas Simulator -->
+            <div class="sim-container">
+              <div class="sim-header-bar">
+                <div class="sim-label"><i data-lucide="camera"></i> LIVE RTSP AI VISION STREAM</div>
+                <span class="status-pill"><span class="pulse-dot"></span> YOLO ACTIVE</span>
+              </div>
+              <div class="sim-canvas-view">
+                <canvas id="ai-bag-canvas"></canvas>
+              </div>
+              <div class="sim-stats-bar">
+                <div class="sim-stat-box">
+                  <div style="color: var(--text-muted);">Counted Bags</div>
+                  <div class="sim-stat-val" id="bag-count-metric" style="color: var(--accent-cyan);">1,248</div>
+                </div>
+                <div class="sim-stat-box">
+                  <div style="color: var(--text-muted);">Inference FPS</div>
+                  <div class="sim-stat-val" style="color: #34d399;">30.0 FPS</div>
+                </div>
+                <div class="sim-stat-box">
+                  <div style="color: var(--text-muted);">Model Confidence</div>
+                  <div class="sim-stat-val" id="bag-conf-metric" style="color: #c084fc;">98.6%</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- PROJECT 2: TECHNO EMS -->
+        <div class="project-deep-card reveal-on-scroll">
+          <div class="project-layout-grid">
+            <div>
+              <div class="project-meta-row">
+                <span class="badge badge-emerald">IoT & Energy Tech</span>
+                <span class="mono-tag" style="color: #34d399;">Smart Energy Monitoring</span>
+              </div>
+              <h3 class="project-title">Techno EMS — Smart Energy System</h3>
+              <p class="project-desc-text">
+                Smart Energy Monitoring System for capturing electricity meter telemetry and relay controls through a dedicated mobile application and backend service.
+              </p>
+              
+              <ul class="project-responsibilities">
+                <li class="resp-item">
+                  <i data-lucide="check"></i>
+                  <span>React Native mobile application development & Node.js backend services</span>
+                </li>
+                <li class="resp-item">
+                  <i data-lucide="check"></i>
+                  <span>ESP32 microcontroller integration with EB Meter & Relays over Modbus communication</span>
+                </li>
+                <li class="resp-item">
+                  <i data-lucide="check"></i>
+                  <span>QR-based meter onboarding, Stripe payment gateway & subscription workflows</span>
+                </li>
+                <li class="resp-item">
+                  <i data-lucide="check"></i>
+                  <span>Push notifications, telemetry alerts, and AI chatbot assistant integration</span>
+                </li>
+              </ul>
+
+              <div class="roadmap-tags">
+                <span class="roadmap-tag">React Native</span>
+                <span class="roadmap-tag">Node.js</span>
+                <span class="roadmap-tag">MySQL</span>
+                <span class="roadmap-tag">ESP32</span>
+                <span class="roadmap-tag">Modbus</span>
+                <span class="roadmap-tag">Stripe</span>
+                <span class="roadmap-tag">AI Chatbot</span>
+              </div>
+            </div>
+
+            <!-- Interactive IoT Telemetry Diagram -->
+            <div class="sim-container">
+              <div class="sim-header-bar">
+                <div class="sim-label"><i data-lucide="radio"></i> IOT TELEMETRY PIPELINE</div>
+                <span class="status-pill"><span class="pulse-dot"></span> MODBUS ONLINE</span>
+              </div>
+              
+              <div class="iot-flow-box">
+                <div class="iot-flow-nodes">
+                  <div class="iot-step-node">
+                    <i data-lucide="zap"></i>
+                    <span class="iot-node-text">EB Meter</span>
+                  </div>
+                  <i data-lucide="chevron-right" class="iot-connector-arrow"></i>
+                  <div class="iot-step-node">
+                    <i data-lucide="cpu"></i>
+                    <span class="iot-node-text">ESP32 Unit</span>
+                  </div>
+                  <i data-lucide="chevron-right" class="iot-connector-arrow"></i>
+                  <div class="iot-step-node">
+                    <i data-lucide="server"></i>
+                    <span class="iot-node-text">Node API</span>
+                  </div>
+                  <i data-lucide="chevron-right" class="iot-connector-arrow"></i>
+                  <div class="iot-step-node">
+                    <i data-lucide="smartphone"></i>
+                    <span class="iot-node-text">Mobile App</span>
+                  </div>
+                </div>
+
+                <div class="iot-telemetry-live">
+                  <div>
+                    <span style="color: var(--text-muted); font-size: 0.72rem;">LIVE TELEMETRY:</span>
+                    <span id="iot-voltage-val" style="color: var(--accent-cyan); font-weight: 700; margin-left: 0.35rem;">239.1 V</span> • 
+                    <span id="iot-current-val" style="color: #34d399; font-weight: 700; margin-left: 0.35rem;">14.3 A</span> • 
+                    <span id="iot-power-val" style="color: #c084fc; font-weight: 700; margin-left: 0.35rem;">3.42 kW</span>
+                  </div>
+                  <div id="iot-kwh-val" style="color: #ffffff; font-weight: 700;">1,429.64 kWh</div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- OTHER PRODUCTION PROJECTS GRID -->
+        <div class="poc-grid">
+          
+          <!-- Subscription Portal -->
+          <div class="poc-card">
+            <div>
+              <span class="badge badge-violet" style="margin-bottom: 0.75rem;">SaaS Infrastructure</span>
+              <h4 style="font-size: 1.25rem; color: #ffffff; margin-bottom: 0.5rem;">Centralized Subscription Portal</h4>
+              <p style="font-size: 0.9rem; color: #94a3b8; margin-bottom: 1rem;">
+                A centralized payment and subscription management platform designed to handle billing and user access flows for applications within the company ecosystem.
+              </p>
+            </div>
+            <div>
+              <div class="roadmap-tags">
+                <span class="roadmap-tag">Node.js</span>
+                <span class="roadmap-tag">EJS</span>
+                <span class="roadmap-tag">Payment Gateway</span>
+                <span class="roadmap-tag">CRUD</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- TrackerCrest AI -->
+          <div class="poc-card">
+            <div>
+              <span class="badge badge-cyan" style="margin-bottom: 0.75rem;">Computer Vision</span>
+              <h4 style="font-size: 1.25rem; color: #ffffff; margin-bottom: 0.5rem;">TrackerCrest AI Attendance</h4>
+              <p style="font-size: 0.9rem; color: #94a3b8; margin-bottom: 1rem;">
+                AI-powered attendance and face detection platform for identifying known and unknown individuals in school and college environments via RTSP feeds.
+              </p>
+            </div>
+            <div>
+              <div class="roadmap-tags">
+                <span class="roadmap-tag">.NET</span>
+                <span class="roadmap-tag">Python</span>
+                <span class="roadmap-tag">Face Detection</span>
+                <span class="roadmap-tag">RTSP</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Jeevan Jyothi Banking -->
+          <div class="poc-card">
+            <div>
+              <span class="badge badge-amber" style="margin-bottom: 0.75rem;">FinTech / Banking</span>
+              <h4 style="font-size: 1.25rem; color: #ffffff; margin-bottom: 0.5rem;">Jeevan Jyothi Banking App</h4>
+              <p style="font-size: 0.9rem; color: #94a3b8; margin-bottom: 1rem;">
+                Production support, bug fixing, SQL stored procedures troubleshooting, full-stack debugging, and Gold Loan module enhancements.
+              </p>
+            </div>
+            <div>
+              <div class="roadmap-tags">
+                <span class="roadmap-tag">C# / .NET</span>
+                <span class="roadmap-tag">SQL</span>
+                <span class="roadmap-tag">Stored Procedures</span>
+                <span class="roadmap-tag">Support</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Azure Data Factory ETL -->
+          <div class="poc-card">
+            <div>
+              <span class="badge badge-cyan" style="margin-bottom: 0.75rem;">Cloud & ETL</span>
+              <h4 style="font-size: 1.25rem; color: #ffffff; margin-bottom: 0.5rem;">Azure Data Factory ETL</h4>
+              <p style="font-size: 0.9rem; color: #94a3b8; margin-bottom: 1rem;">
+                Designed and delivered 3 complete ETL integrations within assigned delivery periods to orchestrate automated enterprise data pipelines.
+              </p>
+            </div>
+            <div>
+              <div class="roadmap-tags">
+                <span class="roadmap-tag">Azure Data Factory</span>
+                <span class="roadmap-tag">ETL Pipelines</span>
+                <span class="roadmap-tag">Data Integration</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- GOVERNMENT & ENTERPRISE POCs SECTION -->
+        <div style="margin-top: 3rem;" class="reveal-on-scroll">
+          <div class="section-header text-left" style="margin-bottom: 2rem;">
+            <span class="section-tag"><i data-lucide="shield"></i> Enterprise Proof of Concepts</span>
+            <h3 style="font-size: 1.75rem; color: #ffffff;">Government & Enterprise POC Experience</h3>
+          </div>
+
+          <div class="poc-grid">
+            <div class="poc-card">
+              <div>
+                <strong style="color: #ffffff; font-size: 1.1rem;">Brunei Government License Renewal POC</strong>
+                <p style="font-size: 0.88rem; color: #94a3b8; margin-top: 0.5rem;">
+                  Mendix-based solution: authentication, approval workflows, automated license card generation, location services, Stripe payments, and automated email services.
+                </p>
+              </div>
+              <span class="mono-tag" style="color: var(--accent-cyan); margin-top: 1rem;">Mendix Low-Code</span>
+            </div>
+
+            <div class="poc-card">
+              <div>
+                <strong style="color: #ffffff; font-size: 1.1rem;">CDC POC System</strong>
+                <p style="font-size: 0.88rem; color: #94a3b8; margin-top: 0.5rem;">
+                  .NET solution: authentication, authorization, role-based views, document processing workflow, and document generation service.
+                </p>
+              </div>
+              <span class="mono-tag" style="color: #c084fc; margin-top: 1rem;">.NET Framework</span>
+            </div>
+
+            <div class="poc-card">
+              <div>
+                <strong style="color: #ffffff; font-size: 1.1rem;">Zabbix Infrastructure POC</strong>
+                <p style="font-size: 0.88rem; color: #94a3b8; margin-top: 0.5rem;">
+                  Zabbix installation, server rack sensor integration, environmental simulation, continuous telemetry monitoring, and alert triggers.
+                </p>
+              </div>
+              <span class="mono-tag" style="color: #34d399; margin-top: 1rem;">Monitoring & Sensors</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- APPLICATION TESTING & SECURITY EXPERTISE -->
+        <div class="security-callout-card reveal-on-scroll">
+          <div class="security-badge-icon">
+            <i data-lucide="shield-alert"></i>
+          </div>
+          <div>
+            <h4 style="color: #ffffff; font-size: 1.25rem; margin-bottom: 0.4rem;">Application Testing & Security Experience</h4>
+            <p style="color: #cbd5e1; font-size: 0.95rem; line-height: 1.6;">
+              During TrackerCrest application security and input validation testing, <strong>identified and reported an input-based cross-site scripting (XSS) vulnerability</strong>. This practical security background ensures students learn defensive programming, input sanitization, and secure authentication habits from day one.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- =========================================================================
+       8. SKILLS MATRIX & WHY LEARN FROM ERYOPS
+       ========================================================================= -->
+  <section class="section" id="skills-matrix">
+    <div class="container">
+      <div class="section-header reveal-on-scroll">
+        <span class="section-tag"><i data-lucide="check-circle"></i> Why Eryops Academy</span>
+        <h2 class="section-title">Built on <span class="text-gradient">Real Engineering Principles</span></h2>
+        <p class="section-desc">Why learners choose this academy over generic coaching centers.</p>
+      </div>
+
+      <div class="benefits-grid reveal-on-scroll">
+        <div class="benefit-card">
+          <div class="benefit-icon"><i data-lucide="layers"></i></div>
+          <h3 class="benefit-title">Real Project Experience</h3>
+          <p class="benefit-text">Training is guided by practical enterprise software development, testing, and production deployment experience.</p>
+        </div>
+
+        <div class="benefit-card">
+          <div class="benefit-icon"><i data-lucide="cpu"></i></div>
+          <h3 class="benefit-title">Full Stack Understanding</h3>
+          <p class="benefit-text">Learn how frontend, backend, databases, REST APIs, and cloud hosting interconnect seamlessly into one architecture.</p>
+        </div>
+
+        <div class="benefit-card">
+          <div class="benefit-icon"><i data-lucide="sparkles"></i></div>
+          <h3 class="benefit-title">AI-Aware Development</h3>
+          <p class="benefit-text">Understand how modern software developers use AI developer tools responsibly and integrate AI APIs into applications.</p>
+        </div>
+
+        <div class="benefit-card">
+          <div class="benefit-icon"><i data-lucide="hammer"></i></div>
+          <h3 class="benefit-title">Practical Learning</h3>
+          <p class="benefit-text">Strong focus on writing clean code, building projects, and resolving real bugs rather than memorizing dry theory.</p>
+        </div>
+
+        <div class="benefit-card">
+          <div class="benefit-icon"><i data-lucide="compass"></i></div>
+          <h3 class="benefit-title">Career Guidance</h3>
+          <p class="benefit-text">Learn how to prepare ATS-friendly resumes, optimize LinkedIn & GitHub profiles, and approach technical interviews.</p>
+        </div>
+
+        <div class="benefit-card">
+          <div class="benefit-icon"><i data-lucide="message-square"></i></div>
+          <h3 class="benefit-title">Tamil Explanation</h3>
+          <p class="benefit-text">Complex architectural concepts explained clearly in Tamil while retaining standard English technical terminology.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- =========================================================================
+       9. CAREER GUIDANCE & ROADMAP
+       ========================================================================= -->
+  <section class="section" id="career">
+    <div class="container">
+      <div class="section-header reveal-on-scroll">
+        <span class="section-tag violet"><i data-lucide="briefcase"></i> Post-Course Mentorship</span>
+        <h2 class="section-title">From Learning to <span class="text-gradient-accent">Job Search</span></h2>
+        <p class="section-desc">Practical guidance on positioning your technical skills and building a credible developer profile.</p>
+      </div>
+
+      <div class="career-pillars-grid reveal-on-scroll">
+        <div class="career-pillar-card">
+          <div class="career-pillar-icon"><i data-lucide="file-text"></i></div>
+          <h4 style="color: #ffffff; font-size: 1.1rem;">ATS Resume Preparation</h4>
+          <p style="font-size: 0.9rem; color: #94a3b8;">Crafting modern, ATS-friendly resumes that highlight your projects, tech stack, and practical achievements.</p>
+        </div>
+
+        <div class="career-pillar-card">
+          <div class="career-pillar-icon">
+            <svg viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+              <rect x="2" y="9" width="4" height="12"></rect>
+              <circle cx="4" cy="4" r="2"></circle>
+            </svg>
+          </div>
+          <h4 style="color: #ffffff; font-size: 1.1rem;">LinkedIn & GitHub Profile</h4>
+          <p style="font-size: 0.9rem; color: #94a3b8;">Optimizing your developer profile and pinning repository showcases to catch the attention of recruiters.</p>
+        </div>
+
+        <div class="career-pillar-card">
+          <div class="career-pillar-icon"><i data-lucide="code-2"></i></div>
+          <h4 style="color: #ffffff; font-size: 1.1rem;">Project Explanation Skills</h4>
+          <p style="font-size: 0.9rem; color: #94a3b8;">Articulating technical architecture, architectural trade-offs, and bug resolution during interviews.</p>
+        </div>
+
+        <div class="career-pillar-card">
+          <div class="career-pillar-icon"><i data-lucide="target"></i></div>
+          <h4 style="color: #ffffff; font-size: 1.1rem;">Job Search Strategy</h4>
+          <p style="font-size: 0.9rem; color: #94a3b8;">Strategic application approaches across hiring portals, startup boards, and developer referrals.</p>
+        </div>
+
+        <div class="career-pillar-card">
+          <div class="career-pillar-icon"><i data-lucide="users"></i></div>
+          <h4 style="color: #ffffff; font-size: 1.1rem;">Mock Technical & HR Prep</h4>
+          <p style="font-size: 0.9rem; color: #94a3b8;">Saturday sessions dedicated to technical problem solving, live coding guidance, and behavioral questions.</p>
+        </div>
+      </div>
+
+      <!-- Transparent Disclaimer -->
+      <div class="career-disclaimer-box reveal-on-scroll">
+        <i data-lucide="info"></i>
+        <div>
+          <strong>Transparent Commitment:</strong> Comprehensive placement and career guidance is provided to empower your job search. Employment or placement is not guaranteed.
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- =========================================================================
+       10. COURSE COMPLETION CERTIFICATE
+       ========================================================================= -->
+  <section class="section" id="certificate">
+    <div class="container">
+      <div class="section-header reveal-on-scroll">
+        <span class="section-tag"><i data-lucide="award"></i> Official Credential</span>
+        <h2 class="section-title">Earn Your Course <span class="text-gradient">Completion Certificate</span></h2>
+        <p class="section-desc">Students who successfully complete all course requirements and project deliverables receive an official Eryops Academy Certificate.</p>
+      </div>
+
+      <!-- Interactive Certificate Preview Box -->
+      <div class="certificate-showcase-box reveal-on-scroll">
+        <div class="cert-border-inner">
+          <div class="cert-seal">
+            <i data-lucide="award" style="width: 38px; height: 38px;"></i>
+          </div>
+
+          <div class="cert-sub">Eryops Academy of Technology</div>
+          <h3 class="cert-title">Certificate of Completion</h3>
+          <p style="color: #94a3b8; font-size: 0.95rem; margin-bottom: 0.75rem;">This is proudly presented to</p>
+
+          <div class="cert-recipient">[ Student Full Name ]</div>
+
+          <p style="color: #cbd5e1; font-size: 0.95rem; max-width: 580px; margin: 0 auto 1.5rem auto; line-height: 1.6;">
+            for successfully mastering the curriculum and building practical projects in
+            <strong style="color: var(--accent-cyan);"> Full Stack Development with AI</strong>
+            covering React.js, Node.js, Express.js, Databases, REST APIs, AI Integration & Deployment.
+          </p>
+
+          <div class="cert-footer-row">
+            <div style="text-align: left;">
+              <div style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--text-muted);">INSTRUCTOR SIGNATURE</div>
+              <div style="font-weight: 700; color: #ffffff; font-size: 0.95rem; margin-top: 0.2rem;">Ramjibabu S</div>
+              <div style="font-size: 0.75rem; color: var(--accent-cyan);">Software Engineer</div>
+            </div>
+
+            <div style="text-align: center;">
+              <span class="badge badge-cyan" style="font-size: 0.75rem;">VERIFIED CREDENTIAL</span>
+            </div>
+
+            <div style="text-align: right;">
+              <div style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--text-muted);">ISSUING AUTHORITY</div>
+              <div style="font-weight: 700; color: #ffffff; font-size: 0.95rem; margin-top: 0.2rem;">Eryops Academy</div>
+              <div style="font-size: 0.75rem; color: var(--accent-cyan);">eryops.academy</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- =========================================================================
+       11. ABOUT ERYOPS ACADEMY
+       ========================================================================= -->
+  <section class="section" id="about">
+    <div class="container">
+      <div class="about-grid reveal-on-scroll">
+        <div>
+          <span class="section-tag"><i data-lucide="info"></i> About the Academy</span>
+          <h2 class="section-title">Modern Tamil-First <span class="text-gradient">Technology Platform</span></h2>
+          <p class="lead" style="margin-bottom: 1.25rem;">
+            Eryops Academy is focused on bridging the gap between theoretical syntax and practical, production-ready software development.
+          </p>
+          <p style="color: #cbd5e1; line-height: 1.7; margin-bottom: 1.5rem;">
+            Our mission is to help learners understand modern software engineering through hands-on development, live coding walkthroughs in Tamil, and direct exposure to how real applications are built, tested, secured, and deployed.
+          </p>
+
+          <div class="about-features-list">
+            <div class="about-feat-item">
+              <div class="about-feat-icon"><i data-lucide="check"></i></div>
+              <div>
+                <strong style="color: #ffffff; font-size: 1rem;">Direct Tamil Explanation</strong>
+                <p style="font-size: 0.88rem; color: #94a3b8;">Technical concepts made intuitive without losing industry terminology.</p>
+              </div>
+            </div>
+
+            <div class="about-feat-item">
+              <div class="about-feat-icon"><i data-lucide="check"></i></div>
+              <div>
+                <strong style="color: #ffffff; font-size: 1rem;">Hands-On Engineering Focus</strong>
+                <p style="font-size: 0.88rem; color: #94a3b8;">Learn by creating real projects, writing APIs, and configuring databases.</p>
+              </div>
+            </div>
+
+            <div class="about-feat-item">
+              <div class="about-feat-icon"><i data-lucide="check"></i></div>
+              <div>
+                <strong style="color: #ffffff; font-size: 1rem;">AI-Aware Workflow</strong>
+                <p style="font-size: 0.88rem; color: #94a3b8;">Master modern AI developer tools and practical API embedding.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="glass-card" style="border-color: rgba(0, 240, 255, 0.25);">
+          <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1.5rem;">
+            <div class="logo-symbol">
+              <img src="assets/images/logo.png" alt="Eryops Academy Logo" class="brand-logo-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+              <i data-lucide="terminal" style="display: none;"></i>
+            </div>
+            <div>
+              <h4 style="color: #ffffff; font-size: 1.15rem;">ERYOPS ACADEMY</h4>
+              <span class="mono-tag" style="color: var(--accent-cyan);">FULL STACK & AI LEARNING</span>
+            </div>
+          </div>
+
+          <div style="display: flex; flex-direction: column; gap: 1rem; font-size: 0.95rem; color: #cbd5e1;">
+            <div style="background: rgba(10, 14, 24, 0.6); padding: 1rem; border-radius: var(--radius-md); border: 1px solid var(--border-glass);">
+              <span style="color: var(--accent-cyan); font-family: var(--font-mono); font-size: 0.78rem; text-transform: uppercase;">PRIMARY COURSE</span>
+              <div style="font-weight: 700; color: #ffffff; margin-top: 0.2rem;">Full Stack Development with AI</div>
+            </div>
+
+            <div style="background: rgba(10, 14, 24, 0.6); padding: 1rem; border-radius: var(--radius-md); border: 1px solid var(--border-glass);">
+              <span style="color: #c084fc; font-family: var(--font-mono); font-size: 0.78rem; text-transform: uppercase;">TRAINING PHILOSOPHY</span>
+              <div style="margin-top: 0.2rem;">Practical Real-World Development • AI Integration • Career Guidance</div>
+            </div>
+
+            <div style="background: rgba(10, 14, 24, 0.6); padding: 1rem; border-radius: var(--radius-md); border: 1px solid var(--border-glass);">
+              <span style="color: #34d399; font-family: var(--font-mono); font-size: 0.78rem; text-transform: uppercase;">NEXT BATCH START</span>
+              <div style="font-weight: 700; color: #ffffff; margin-top: 0.2rem;">September 7, 2026 (Live Online)</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- =========================================================================
+       12. FREQUENTLY ASKED QUESTIONS (FAQ)
+       ========================================================================= -->
+  <section class="section" id="faq">
+    <div class="container">
+      <div class="section-header reveal-on-scroll">
+        <span class="section-tag"><i data-lucide="help-circle"></i> Clear Answers</span>
+        <h2 class="section-title">Frequently Asked <span class="text-gradient">Questions</span></h2>
+        <p class="section-desc">Everything you need to know about the course structure, schedule, language, and guidance.</p>
+      </div>
+
+      <div class="faq-accordion reveal-on-scroll">
+        
+        <!-- FAQ 1 -->
+        <div class="faq-item">
+          <button class="faq-question-btn">
+            <span>Is this course completely in Tamil?</span>
+            <i data-lucide="chevron-down" class="faq-chevron"></i>
+          </button>
+          <div class="faq-answer-panel">
+            <p class="faq-answer-text">
+              Yes. Technical terminology such as React, API, Node.js, SQL, JWT etc. will be taught using their standard industry names while comprehensive explanations and conceptual breakdowns are provided in Tamil.
+            </p>
+          </div>
+        </div>
+
+        <!-- FAQ 2 -->
+        <div class="faq-item">
+          <button class="faq-question-btn">
+            <span>Is the course conducted live online?</span>
+            <i data-lucide="chevron-down" class="faq-chevron"></i>
+          </button>
+          <div class="faq-answer-panel">
+            <p class="faq-answer-text">
+              Yes. Live online sessions are conducted Monday through Friday with real-time screen sharing, interactive coding labs, and active Q&A.
+            </p>
+          </div>
+        </div>
+
+        <!-- FAQ 3 -->
+        <div class="faq-item">
+          <button class="faq-question-btn">
+            <span>Are class session recordings provided?</span>
+            <i data-lucide="chevron-down" class="faq-chevron"></i>
+          </button>
+          <div class="faq-answer-panel">
+            <p class="faq-answer-text">
+              Yes. Session recordings are included for all students so you can review complex topics, practice at your own pace, and never fall behind.
+            </p>
+          </div>
+        </div>
+
+        <!-- FAQ 4 -->
+        <div class="faq-item">
+          <button class="faq-question-btn">
+            <span>How long is the course duration?</span>
+            <i data-lucide="chevron-down" class="faq-chevron"></i>
+          </button>
+          <div class="faq-answer-panel">
+            <p class="faq-answer-text">
+              The course runs for 4 months (16 structured weeks), taking you progressively from web fundamentals through frontend, backend, databases, full-stack architecture, AI integration, and project deployment.
+            </p>
+          </div>
+        </div>
+
+        <!-- FAQ 5 -->
+        <div class="faq-item">
+          <button class="faq-question-btn">
+            <span>What are the daily class timings?</span>
+            <i data-lucide="chevron-down" class="faq-chevron"></i>
+          </button>
+          <div class="faq-answer-panel">
+            <p class="faq-answer-text">
+              Live technical classes are held Monday through Friday, 6:00 PM to 7:30 PM.
+            </p>
+          </div>
+        </div>
+
+        <!-- FAQ 6 -->
+        <div class="faq-item">
+          <button class="faq-question-btn">
+            <span>What happens on Saturdays and Sundays?</span>
+            <i data-lucide="chevron-down" class="faq-chevron"></i>
+          </button>
+          <div class="faq-answer-panel">
+            <p class="faq-answer-text">
+              Saturday is dedicated to Career & Interview Guidance (resume reviews, GitHub profile tuning, mock interviews). Sunday is a holiday for rest and personal project practice.
+            </p>
+          </div>
+        </div>
+
+        <!-- FAQ 7 -->
+        <div class="faq-item">
+          <button class="faq-question-btn">
+            <span>Is placement or job guaranteed?</span>
+            <i data-lucide="chevron-down" class="faq-chevron"></i>
+          </button>
+          <div class="faq-answer-panel">
+            <p class="faq-answer-text">
+              No. We provide comprehensive career and placement guidance (ATS resume building, portfolio structuring, mock interviews, and job application strategies), but employment or placement is not guaranteed.
+            </p>
+          </div>
+        </div>
+
+        <!-- FAQ 8 -->
+        <div class="faq-item">
+          <button class="faq-question-btn">
+            <span>Is a certificate provided after the course?</span>
+            <i data-lucide="chevron-down" class="faq-chevron"></i>
+          </button>
+          <div class="faq-answer-panel">
+            <p class="faq-answer-text">
+              Yes, an official Course Completion Certificate from Eryops Academy is provided subject to fulfilling the required course and project completion requirements.
+            </p>
+          </div>
+        </div>
+
+        <!-- FAQ 9 -->
+        <div class="faq-item">
+          <button class="faq-question-btn">
+            <span>Is this course suitable for beginners?</span>
+            <i data-lucide="chevron-down" class="faq-chevron"></i>
+          </button>
+          <div class="faq-answer-panel">
+            <p class="faq-answer-text">
+              Yes, the curriculum is carefully designed to start with web development fundamentals in Month 1 before advancing into component architecture, server endpoints, databases, and AI integration.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- =========================================================================
+       13. CONTACT & REGISTRATION CTA SECTION
+       ========================================================================= -->
+  <section class="section" id="contact">
+    <div class="container">
+      <div class="cta-banner-box reveal-on-scroll">
+        <span class="section-tag"><i data-lucide="rocket"></i> Enroll in the Upcoming Batch</span>
+        <h2 style="font-size: clamp(2rem, 3.8vw, 3rem); margin-top: 0.5rem; margin-bottom: 1rem;">
+          Start Your <span class="text-gradient">Developer Journey</span>
+        </h2>
+        <p style="font-size: 1.15rem; color: #cbd5e1; max-width: 680px; margin: 0 auto 1.5rem auto;">
+          Join the September 7, 2026 batch for 4 months of live online Full Stack & AI development training in Tamil.
+        </p>
+
+        <div class="cta-actions-group">
+          <a href="GOOGLE_FORM_URL" class="btn btn-primary btn-lg cta-register-btn">
+            <span>Register for September 7 Batch</span>
+            <i data-lucide="arrow-right"></i>
+          </a>
+          <a href="https://wa.me/919361804523" class="btn btn-whatsapp btn-lg cta-whatsapp-btn">
+            <i data-lucide="message-circle"></i>
+            <span>Chat on WhatsApp</span>
+          </a>
+        </div>
+
+        <!-- Direct Contact Strip -->
+        <div class="contact-direct-strip">
+          <a href="tel:+919361804523" class="contact-link-item">
+            <i data-lucide="phone" style="color: var(--accent-cyan);"></i>
+            <span>Phone / WhatsApp: +91 93618 04523</span>
+          </a>
+          <a href="mailto:rb066651@gmail.com" class="contact-link-item">
+            <i data-lucide="mail" style="color: var(--accent-cyan);"></i>
+            <span>Instructor Email: rb066651@gmail.com</span>
+          </a>
+          <div class="contact-link-item">
+            <i data-lucide="map-pin" style="color: var(--accent-cyan);"></i>
+            <span>Chennai, Tamil Nadu</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- =========================================================================
+       14. FOOTER
+       ========================================================================= -->
+  <footer class="footer-main">
+    <div class="container">
+      <div class="footer-grid">
+        
+        <!-- Brand Col -->
+        <div>
+          <a href="#hero" class="nav-logo" style="margin-bottom: 1rem;">
+            <div class="logo-symbol">
+              <img src="assets/images/logo.png" alt="Eryops Academy Logo" class="brand-logo-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+              <i data-lucide="cpu" style="display: none;"></i>
+            </div>
+            <div class="logo-text">
+              <span class="brand-name">ERYOPS</span>
+              <span class="brand-sub">ACADEMY</span>
+            </div>
+          </a>
+          <p style="font-size: 0.9rem; color: #94a3b8; line-height: 1.6; margin-bottom: 1.25rem;">
+            Modern Tamil-first technology learning platform specializing in Full Stack Development, AI tools, and real-world project building.
+          </p>
+          <div class="badge badge-cyan">Starts Sept 7, 2026</div>
+        </div>
+
+        <!-- Navigation Links -->
+        <div>
+          <h4 class="footer-col-title">Navigation</h4>
+          <ul class="footer-links-list">
+            <li><a href="#hero" class="footer-link">Home</a></li>
+            <li><a href="#about" class="footer-link">About Academy</a></li>
+            <li><a href="#course" class="footer-link">Course Details</a></li>
+            <li><a href="#journey" class="footer-link">4-Month Roadmap</a></li>
+            <li><a href="#projects" class="footer-link">Real Projects</a></li>
+            <li><a href="#instructor" class="footer-link">Instructor Profile</a></li>
+          </ul>
+        </div>
+
+        <!-- Program Links -->
+        <div>
+          <h4 class="footer-col-title">Program & Policy</h4>
+          <ul class="footer-links-list">
+            <li><a href="#offer" class="footer-link">Special Offer (₹5,999)</a></li>
+            <li><a href="#career" class="footer-link">Career Guidance</a></li>
+            <li><a href="#certificate" class="footer-link">Certificate Preview</a></li>
+            <li><a href="#faq" class="footer-link">FAQ</a></li>
+            <li><a href="GOOGLE_FORM_URL" class="footer-link cta-register-btn">Register for Batch</a></li>
+          </ul>
+        </div>
+
+        <!-- Connect Col -->
+        <div>
+          <h4 class="footer-col-title">Connect & Inquiries</h4>
+          <ul class="footer-links-list">
+            <li style="color: #cbd5e1; font-size: 0.9rem;">
+              <strong style="color: #ffffff;">Instructor:</strong> Ramjibabu S
+            </li>
+            <li>
+              <a href="tel:+919361804523" class="footer-link" style="display: flex; align-items: center; gap: 0.5rem;">
+                <i data-lucide="phone" style="width: 14px; height: 14px; color: var(--accent-cyan);"></i>
+                <span>+91 93618 04523</span>
+              </a>
+            </li>
+            <li>
+              <a href="mailto:rb066651@gmail.com" class="footer-link" style="display: flex; align-items: center; gap: 0.5rem;">
+                <i data-lucide="mail" style="width: 14px; height: 14px; color: var(--accent-cyan);"></i>
+                <span>rb066651@gmail.com</span>
+              </a>
+            </li>
+            <li>
+              <a href="ACADEMY_LINKEDIN" class="footer-link" style="display: flex; align-items: center; gap: 0.5rem;">
+                <svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" style="color: var(--accent-cyan);"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                <span>Academy LinkedIn</span>
+              </a>
+            </li>
+            <li>
+              <a href="ACADEMY_WEBSITE" class="footer-link" style="display: flex; align-items: center; gap: 0.5rem;">
+                <i data-lucide="globe" style="width: 14px; height: 14px; color: var(--accent-cyan);"></i>
+                <span>Academy Website</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+
+      <!-- Bottom Bar -->
+      <div class="footer-bottom-bar">
+        <div>
+          © 2026 ERYOPS ACADEMY. All rights reserved. Full Stack Development with AI.
+        </div>
+        <div>
+          Live Online Training in Tamil • Placement & Career Guidance
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/canvas-bg.js"></script>
+  <script src="js/interactive-demos.js"></script>
+  <script src="js/filter-tech.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
